@@ -1,0 +1,5 @@
+2020-10-08 14:14:52,649 - DEBUG - debug message
+2020-10-08 14:14:52,649 - INFO - info message
+2020-10-08 14:14:52,649 - WARNING - warning message
+2020-10-08 14:14:52,650 - ERROR - error message
+2020-10-08 14:14:52,650 - CRITICAL - critical message
