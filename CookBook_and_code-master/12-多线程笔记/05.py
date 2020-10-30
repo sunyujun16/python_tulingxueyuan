@@ -21,7 +21,7 @@ def loop2(in1, in2):
     # ctime 得到当前时间
     print('Start loop 2 at :', time.ctime())
     # 把参数in 和 in2打印出来，代表使用
-    print("我是参数 " ,in1 , "和参数  ", in2)
+    print("我是参数 ", in1, "和参数  ", in2)
     # 睡眠多长时间，单位是秒
     time.sleep(2)
     print('End loop 2 at:', time.ctime())
@@ -47,3 +47,4 @@ if __name__ == "__main__":
     # 一定要有while语句
     # 因为启动多线程后本程序就作为主线程存在
     # 如果主线程执行完毕，则子线程可能也需要终止
+    # 但是加入了join就不一样了， 主线程会等待子线程运行完毕

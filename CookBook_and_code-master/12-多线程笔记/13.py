@@ -19,7 +19,7 @@ class Producer(threading.Thread):
                     msg = self.name + '产品生成'+str(count)
                     queue.put(msg)
                     print(msg)
-            time.sleep(0.5)
+            time.sleep(0.1)
 
 
 class Consumer(threading.Thread):
@@ -30,7 +30,7 @@ class Consumer(threading.Thread):
                 for i in range(3):
                     msg = self.name + "spent" + queue.get()
                     print(msg)
-            time.sleep(1)
+            time.sleep(0.2)
 
 
 if __name__ == '__main__':

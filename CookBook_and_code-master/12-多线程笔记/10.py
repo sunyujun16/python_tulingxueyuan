@@ -30,7 +30,7 @@ def main():
     # 以下t1 和  t2的定义方式相等
     t = ThreadFunc("loop")
     t1 = threading.Thread(target=t.loop, args=("LOOP1", 4))
-    # 下面这种写法更西方人，工业化一点
+    # 下面这种写法更西方人，工业化一点，不需要实例化一个t。
     t2 = threading.Thread(target=ThreadFunc('loop').loop, args=("LOOP2", 2))
 
     # 常见错误写法

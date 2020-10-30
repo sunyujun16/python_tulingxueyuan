@@ -30,4 +30,6 @@ if __name__ == '__main__':
     producer(sequence, q)
 
     q.put(None)
+    print(sequence)
+
     cons_p.join()

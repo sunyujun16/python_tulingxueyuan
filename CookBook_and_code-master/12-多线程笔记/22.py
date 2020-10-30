@@ -1,4 +1,5 @@
 import multiprocessing
+import time
 from time import ctime
 
 
@@ -31,7 +32,10 @@ if __name__ == '__main__':
 
     # 生产多个项，sequence代表要发送给消费者的项序列
     # 在实践中，这可能是生成器的输出或通过一些其他方式生产出来
+    time.sleep(3)  # 这是我添加的。因为之前对程序先运行producer产生了困惑。
     sequence = [1, 2, 3, 4]
     producer(sequence, q)
     # 等待所有项被处理
     q.join()
+
+# 在主进程没有sleep语句时，我们可以看见， 创建一个子进程需要一秒左右的时间， 还是比较慢的。

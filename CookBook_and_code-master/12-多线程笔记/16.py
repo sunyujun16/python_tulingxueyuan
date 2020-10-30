@@ -5,11 +5,11 @@ import time
 semaphore = threading.Semaphore(3)
 
 
+# 用法：
 def func():
     if semaphore.acquire():
-        for i in range(5):
-            print(threading.currentThread().getName() + ' get semaphore')
-        time.sleep(15)
+        print(threading.currentThread().getName() + ' get semaphore')
+        time.sleep(3)
         semaphore.release()
         print(threading.currentThread().getName() + ' release semaphore')
 

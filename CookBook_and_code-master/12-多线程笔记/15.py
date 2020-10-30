@@ -4,6 +4,8 @@ import time
 lock_1 = threading.Lock()
 lock_2 = threading.Lock()
 
+
+# func_1最后也没有申请到lock2, 里面的代码永远不会执行
 def func_1():
     print("func_1 starting.........")
     lock_1.acquire(timeout=4)
@@ -41,6 +43,7 @@ def func_2():
     print("func_2 释放了 lock_2")
 
     print("func_2 done..........")
+
 
 if __name__ == "__main__":
 
