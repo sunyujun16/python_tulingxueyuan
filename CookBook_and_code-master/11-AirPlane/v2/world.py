@@ -44,7 +44,7 @@ window_canvas.pack()
 def main():
     #创建
     # 创建开始界面
-    background_image_fullname = "../img/background.gif"
+    background_image_fullname = "../img/sky.gif"
     # background_image_fullname = "/home/augs/AirPlane/img/start.gif"
     # background_image_fullname = "start.gif"
     start_img = tkinter.PhotoImage(file=background_image_fullname)

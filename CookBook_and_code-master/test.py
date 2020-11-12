@@ -1,16 +1,20 @@
+class MappingMixin:
+    def __getitem__(self, key):
+        return self.__dict__.get(key)
 
-def stu(name, age):
-    '''
-    这是文档的文字内容
-    :param name: 表示学生的姓名
-    :param age: 表示学生的年龄
-    :return: 此函数没有返回值
-    '''
+    # def __setitem__(self, key, value):
+    #     return self.__dict__.set(key, value)
     pass
 
 
-print(help(stu))
+class Person(MappingMixin):
+    def __init__(self, name, gender, age):
+        self.name = name
+        self.gender = gender
+        self.age = age
 
-print("*" * 20)
 
-print(stu.__doc__)
+p = Person("小陈", "男", 18)
+print(p.name)
+print(p['name'])
+print(p['age'])

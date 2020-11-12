@@ -5,6 +5,7 @@ import time
 class Snake(threading.Thread):
     def __init__(self, canvas, q_instance):
         threading.Thread.__init__(self)
+        super().__init__()
         self.canvas = canvas
         self.pos = [(10, 10), (10, 20), (10, 30), (10, 40), (10, 50)]
         self.width = 10

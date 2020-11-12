@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # 1. 定义图片位置
     # 2. 创建PhotoImage对象
     # 3. 利用create_image函数把图片画上去
-    bg_img_name = "../img/background.gif"
+    bg_img_name = "../img/sky.gif"
     bg_img = tkinter.PhotoImage(file=bg_img_name)
     # tags 的作用是，以后我们使用创建好的image可以通过tags使用
     window_canvas.create_image(240, 300, anchor=tkinter.CENTER,
