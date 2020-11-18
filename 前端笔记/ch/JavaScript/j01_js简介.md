@@ -1,0 +1,6 @@
+- 95年出生
+- 由早期网景公司开发
+- Jscript是微软开发的
+- 目前Jscript和JavaScript基本上是同一个东西
+- ECMA组织制定ECMAscript语法规范,统一了他俩的冲突
+- js也是面向对象的语言

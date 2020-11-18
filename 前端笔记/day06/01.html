@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动定位</title>
+    <style>
+        div{
+            /*width: 200px;*/
+            /*height: 200px;*/
+        }
+        .box1{
+            background-color: green;
+            /*fu浮动
+                左右方向
+                浮动会变成行内块元素
+                碰到父级元素或其他浮动元素会停止
+                前面有固定块元素会另外起一行
+             */
+            float: left;
+        }
+        .box2{
+            width: 300px;
+            background-color: red;
+            /*float: left;*/
+        }
+        .box4{
+            width: 400px;
+            background-color: blue;
+            /*被覆盖元素的文字会被挤出块外部*/
+            /*float: left;*/
+        }
+        .box3{
+            width: 400px;
+            background-color: yellow;
+            /*float: left;*/
+        }
+        .wrap{
+            width: 700px;
+            border: 2px solid red;
+            /*解决其子元素全部浮动时,高度坍塌的情况*/
+            overflow: auto;
+        }
+        .item1{
+            width: 200px;
+            height: 200px;
+            background-color: #2aabd2;
+            float: left;
+        }
+        .item2{
+            width: 200px;
+            height: 300px;
+            background-color: #985f0d;
+            float: left;
+        }
+        .item3{
+            width: 200px;
+            height: 200px;
+            background-color: silver;
+            float: left;
+        }
+        .item4{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="wrap">
+        <div class="item1">item1</div>
+        <div class="item2">item2</div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的第一个页面</title>
+    <style>
+        .logo{
+            /*border:1px solid black;*/
+            width: 100px;
+            height: 100px;
+            background-image:url("./c10_ls.png");
+            background-size: 100px;
+            float: left;
+            margin-top: 50px;
+            margin-left: 50px;
+            /*position: relative;*/
+            /*left: 50px;*/
+            /*visibility: hidden;*/
+        }
+        .ad1{
+            /*border:1px solid black;*/
+            width: 800px;
+            height: 100px;
+            background-image:url("./a.jpg");
+            background-size: 100px;
+            background-repeat: repeat-x;
+            float: right;
+            margin-top: 50px;
+            margin-right: 50px;
+            text-align: center;
+            /*visibility: hidden;*/
+            /*vertical-align: center; 无效*/
+        }
+        .ad1:after{clear: right}
+        .ad1_text{
+            font-family: "free mono";
+            font-size: 30px;
+            font-weight: bold;
+            color: darkred;
+            text-decoration: underline;
+            line-height: 150px;
+            /*text-align: right; 无效*/
+            /*vertical-align: center; 无效*/
+        }
+        .navigate{
+            /*width: 1080px;*/
+            /*height: 800px;*/
+            /*border: 1px solid red;*/
+            /*background-color: red;*/
+            clear: both;
+
+            /*margin-top: 330px; 无效*/
+        }
+        ul{
+            display: inline-block;
+            /* float: left;*/
+            /*clear: left;*/
+            /*margin-top: 80px;*/
+            margin-left: 0px;
+        }
+        ul li{
+            border: 1px solid crimson;
+            background-color: lightpink;
+            width: 80px;
+            display: inline-block;
+            margin-left: 60px;
+            text-align: center;
+        }
+        .imgs{
+            height: 750px;
+            background: white;
+        }
+        .main1{
+            width: 50%;
+            height: 750px;
+            border: 1px solid blue;
+            background-image: url("a.jpg");
+            background-size: 500px;
+            margin-left: 50px;
+            float: left;
+        }
+        .main2{
+            width: 40%;
+            height: 750px;
+            border: 1px solid blue;
+            background-image: url("b.jpg");
+            background-size: 500px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            float: right;
+            background-position: 100% 20%;
+            /*background-attachment: scroll; 无效*/
+        }
+        .main2:after{
+            clear: both
+        }
+        .ad2{
+            height: 100px;
+            width: 90%;
+            background: green;
+            clear: left;
+            /*padding-top: 30px; 内边*/
+            /*position: absolute;*/
+            /*top: 950px;*/
+            /*left: 50px;*/
+            margin-top: 20px;
+            margin-left: 50px;
+            /*text-anchor: middle;*/
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        p{
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="ad1">
+        <a class="ad1_text" href="https://www.tupianzj.com/meinv/mm/" target="_blank">广告1:只要998, 漂亮美女带回家</a>
+    </div>
+    <!--<hr/><br/>-->
+    <div class="navigate">
+        <ul>
+            <li>高清无码</li>
+            <li>高清有码</li>
+            <li>欧美专区</li>
+            <li>动漫专区</li>
+            <li>在线视频</li>
+            <li>技术论坛</li>
+        </ul>
+    </div>
+    <div class="imgs">
+        <div class="main1"></div>
+        <div class="main2"></div>
+    </div>
+    <div class="ad2">他妈的这个费劲呐</div>
+    <p>&copy&nbsp&nbsp&nbsp&nbsp版权归孙宇军所有</p>
+</body>
+</html>

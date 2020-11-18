@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本属性</title>
+    <style>
+        .one{
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            /*水平对其*/
+            text-align: right;
+            /*垂直对齐只对内联元素有效*/
+
+        }
+        .two{
+            width: 300px;/*无效*/
+            height: 100px;/*无效*/
+            /*border: 1px solid red;*/
+            font-family: "free mono";
+        }
+        table{
+            vertical-align: bottom;
+        }
+        .three{
+            /*乔装打扮*/
+            display: table-cell;
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            vertical-align: bottom;
+            text-align:center;
+        }
+        .four{
+            line-height: 30px;
+            /*text-indent: 50px;*/
+            text-indent: 2em; /*4ex*/
+        }
+        .five{
+
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            word-spacing: 60px;
+        }
+        .six{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            /*保持缩进*/
+            white-space: pre;
+            /*保持缩进并自动换行*/
+        }
+        .seven{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            /*保持缩进并自动换行, 结果很乱套*/
+            /*white-space: pre-wrap;*/
+            /*保持缩进并自动换行, 结果很乱套*/
+            white-space: pre-line;
+
+        }
+        .eight{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            /*取消自动换行*/
+            white-space: nowrap;
+        }
+        .xia{
+            text-decoration: underline;
+        }
+        .del{
+            text-decoration: line-through;
+        }
+        .top{
+            text-decoration: overline;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p class="one">123</p>
+    <b class="two">gsfdgsdfgsdfgsdfg</b>
+    <hr/>
+
+    <table border="1" width="300" height="100" cellspacing="0">
+        <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+            <td>asdf</td>
+        </tr>
+    </table>
+
+    <div class="three">1</div>
+    <div class="three">2</div>
+    <hr/>
+
+    <p class="four">
+        君住长江头<br/>
+        我住长江尾<br/>
+        日日思君不见君<br/>
+        共饮长江水
+    </p>
+
+    <p class="five">if you are an asshole, then do it.</p><hr/>
+
+    <div class="six">
+        大赛的国家哈斯阿斯
+            大赛地方卡斯就获得了卡教授等各类科技阿
+        斯林道口附近哈斯离开根据地和卢卡斯计划
+        def my_add(x, y):
+            print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            return x + y
+    </div>
+    <div class="seven">
+        大赛的国家哈斯阿斯
+            大赛地方卡斯就获得了卡教授等各类科技阿
+        斯林道口附近哈斯离开根据地和卢卡斯计划
+        def my_add(x, y):
+            print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            return x + y
+    </div>
+
+    <div class="eight">
+        asdfgghafgsfdasdfasdfdgh asdf asd fasdgdafh dfgjhdfgjhghssdhf
+    </div>
+
+    <hr/>
+    <code>
+        class My_meal():
+            def __init__(self):
+                self.cal = 100
+                print(str(self.cal) + "KJ")
+    </code>
+    /*代码标签*/
+    <pre>
+        class My_meal():
+            def __init__(self):
+                self.cal = 100
+                print(str(self.cal) + "KJ")
+    </pre>
+
+    <hr/>
+    <p class="xia">下划线</p>
+    <p class="del">删除线</p>
+    <p class="top">上横线</p>
+    <a href="http://www.baidu.com">百度一下你就知道</a><hr/>
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        .item1{
+            width: 200px;
+            height: 200px;
+            background-color: #2aabd2;
+            border: 10px solid crimson;
+            padding: 10px;
+            margin: 20px;
+            /*以上除了margin都会影响盒子大小, 怎么办呢*/
+            /*解决item2*/
+
+        }
+        .item2{
+            width: 200px;
+            height: 200px;
+            background-color: tan;
+            /*让内边距和边框不影响盒子大小的方法, box-sizing*/
+            padding: 20px;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="item1">item1</div>
+    <div class="item2">item2</div>
+</body>
+</html>

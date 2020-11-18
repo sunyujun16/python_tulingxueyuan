@@ -1,0 +1,20 @@
+<!doctype html>
+<!--
+将多个页面合并成一个 网站后台使用 客户端不用这东西
+各个页面之间互不影响
+frameborder便框开关;border边框粗细
+与body不共存
+-->
+<frameset frameborder="1" rows="20%,70%,5%">
+    <!--下面是第一次切割的20%的页面-->
+    <frame src="c06_top.html" scrolling="yes" noresize />
+    <!--剩下80%-->
+    <frameset frameborder="1" cols="20%,80%">
+        <frame src="c06_left.html" scrolling="no"/>
+        <frame src="c06_right.html" scrolling="no"/>
+    </frameset>
+    <frameset>
+        <frame src="c06_bottom.html" />
+    </frameset>
+
+</frameset>

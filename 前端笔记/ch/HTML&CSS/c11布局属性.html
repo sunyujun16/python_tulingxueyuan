@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局属性</title>
+    <style>
+        div{
+            border:1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+        /*display消失*/
+        .one{
+            display: block;
+            background-color: red;
+        }
+        .two, .three{
+            display: inline-block;
+            background-color: green;
+        }
+        .three{
+            display: inline-block;
+            background-color: blue;
+        }
+        .four, .five{
+            display: inline;
+            background-color: orange;
+        }
+        .six{
+            border:1px solid black;
+            background-color: #2e6da4;
+            width: 300px;
+            height: 300px;
+            /*隐身, 默认为inherit继承自父元素,几乎不用*/
+            visibility: hidden;
+        }
+        .seven{
+            border:1px solid black;
+            background-color: #2a4;
+            width: 300px;
+            height: 300px;
+            visibility: visible;
+        }
+        /*overflow: auto; scroll; hidden; visible(默认值)*/
+        .eight{
+            border:1px solid black;
+            background-color: #a7a;
+            width: 300px;
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div><hr/>
+    <div class="four">4444</div>
+    <div class="five">555555</div><hr/>
+    <div class="six">6</div>
+    <div class="seven">
+        777777777777777777777777777777777777777777777777777
+    </div><hr/>
+
+    <div class="eight">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br/>8<br/>8<br/>8<br/>8<br/>8<br/>8<br/>
+        8<br/>8<br/>8<br/>8<br/>8<br/>8<br/>8<br/>
+        8<br/>8<br/>8<br/>8<br/>8<br/>8<br/>8<br/>
+    </div>
+
+</body>
+</html>

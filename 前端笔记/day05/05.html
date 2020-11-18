@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yuansu元素的切换</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+
+            /*
+            将块元素转换为内联元素
+             */
+            /*display: inline;*/
+
+        }
+
+        .b1{
+            background-color: thistle;
+        }
+        .b2{
+            background-color: seashell;
+        }
+        .b3{
+            background-color: red;
+        }
+
+        .b2 span{
+            width: 200px;
+            height: 200px;
+            /*background-color: #2aabd2;*/
+            display: none;
+        }
+        .b2:hover span{
+            width: 500px;
+            height: 100px;
+            background-color: yellow;
+            display: inline-block;
+        }
+
+        /*span{*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    background-color: green;*/
+        /*    display: block;*/
+        /*}*/
+
+        p{
+            width: 200px;
+            height: 200px;
+            background-color: moccasin;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="b1">1</div>
+    <div class="b2">2
+        <span class="span1">鼠标悬停显示我</span>
+    </div>
+    <div class="b3">3</div>
+
+    <p>内联块元素，也叫行内块元素，</p>
+    <p>是新增的元素类型，现有元素没有归于此类别的，</p>
+    <p>img和input元素的行为类似这种元素，</p>
+    <p>但是也归类于内联元素，它们在布局中表现的行为</p>
+    ：
+</body>
+</html>

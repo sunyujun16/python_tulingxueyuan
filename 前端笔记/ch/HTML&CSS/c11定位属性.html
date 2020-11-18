@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位属性</title>
+    <style>
+        /*div{*/
+        /*    border:1px solid blue;*/
+        /*    width: 300px;*/
+        /*    height: 1000px;*/
+        /*    position:absolute;*/
+        /*}*/
+        .one{
+            border:1px solid red;
+            width: 200px;
+            height: 200px;
+            /*定位: 静态定位static;绝对定位absolute;相对定位relative*/
+            /*position: static; !*所有元素默认*!*/
+
+            /*绝对定位, 自由度最高, 参照物为第一个非静态父元素, 会彻底脱离文档流, 可用于漂浮广告等*/
+            position:absolute;
+            /*定位的四个属性left top略*/
+            left: 400px;
+            top: 150px;
+        }
+        .two{
+            border:1px solid blue;
+            width: 200px;
+            height: 200px;
+        }
+        .three{
+            border:1px solid darkkhaki;
+            width: 200px;
+            height: 200px;
+        }
+        /*外层只有body和html作为参照物*/
+        .out{
+            border:1px solid blue;
+            width: 500px;
+            height: 200px;
+            background:green;
+            position: absolute;
+            left: 200px;
+        }
+        /*定位参照物为.out,因为.out不是static定位*/
+        .in{
+            border:1px solid blue;
+            width: 200px;
+            height: 100px;
+            background:yellow;
+            position: absolute;
+            left: 400px;
+        }
+        /*相对定位,参照物为自己*/
+        .four{
+            border:1px solid blue;
+            width: 200px;
+            height: 100px;
+            background:darkorange;
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+        /*绑定定位, 可以和a标签配合实现返回顶部*/
+        .bd{
+            border:1px solid blue;
+            width: 200px;
+            height: 100px;
+            background:darkseagreen;
+            position:fixed;
+            /*左和上的优先级高于右和下*/
+            left: 100px;
+            top: 30px;
+            right: 100px; /*无效,优先级低*/
+            bottom: 100px; /*无效,优先级低*/
+        }
+
+        .ya{
+            border:1px solid blue;
+            width: 300px;
+            height: 1000px;
+            position:absolute;
+            background-color: red;
+            z-index: 1;
+        }
+        .yi{
+            border:1px solid blue;
+            width: 300px;
+            height: 1000px;
+            position:absolute;
+            background-color: green;
+            left: 100px;
+            bottom: 100px;
+            z-index: 2;
+        }
+        .sang{
+            border:1px solid blue;
+            width: 300px;
+            height: 1000px;
+            position:absolute;
+            background-color: blue;
+            left: 200px;
+        }
+    </style>
+</head>
+<body style="background:lightblue;">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+
+    <hr/><br/>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+
+    <div class="four">4,右边那俩货脱离文档流了</div>
+    <hr/>
+    <div class="bd">5</div>
+
+    <div class="ya">1</div>
+    <div class="yi">2</div>
+    <div class="sang">3</div>
+</body>
+</html>

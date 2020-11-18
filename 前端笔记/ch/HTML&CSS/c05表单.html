@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单练习</title>
+    <style>
+        <!--略-->
+    </style>
+</head>
+<body>
+    <!--设定表单信息和范围-->
+    <!--method:get/post;  get明文传输,受地址栏设定限制;  post密文传输,没有长度限制-->
+    <form action="http://www.baidu.com" method="post" enctype="multipart/form-data">
+
+
+        <!--单行文本输入框-->
+        <input type="text" name="username1" readonly size="50" maxlength="10" placeholder="请输入用户名"><br>
+        <input type="text" name="username2" disabled size="50" maxlength="10" placeholder="请输入用户名"><br>
+        <input type="text" name="username3" size="50" maxlength="10" placeholder="请输入用户名"><br>
+        <input type="password" name="password" value="" placeholder="请输入密码">
+        <hr />
+        <!--单选表单-->
+        <input type="radio" name="gender" value="male" checked>男
+        <input type="radio" name="gender" value="female">女
+        <input type="radio" name="gender" value="unknown">不知道
+
+        <hr/>
+        <input type="checkbox" name="hobby" value="0" checked>篮球
+        <input type="checkbox" name="hobby" value="1">足球
+        <input type="checkbox" name="hobby" value="2" checked>肉球
+        <input type="checkbox" name="hobby" value="3">地球
+
+        <hr />
+        <input type="file" name="fileurl">
+
+        <hr />
+        <input type="reset" value="清空重写">
+
+        <hr />
+        <!--图片提交按钮, 也是提交按钮-->
+        <input type="image" name="pic" src="../../day04/123.jpg" width="200px" title="巨乳">
+
+        <input type="hidden" name="usr_id" value="200511">
+
+        <hr />
+        <input type="submit" value="提交信息">
+
+        <hr/>
+        <!--下拉表单/单选-->
+        <select name="yuefen">
+            <option value="1">1月</option>
+            <option value="2">2月</option>
+            <option value="3" selected>3月</option>
+            <option value="4">4月</option>
+        </select>
+
+        <hr/>
+        <!--下拉表单/多选-->
+        <select name="workday" multiple>
+            <option value="1">星期1</option>
+            <option value="2" selected>星期2</option>
+            <option value="3" selected>星期3</option>
+            <option value="4">星期4</option>
+            <option value="5">星期5</option>
+        </select>
+
+        <hr/>
+        <!--文本域表单-->
+        <textarea name="describe" rows="5" cols="10">
+            此处省略一万字点点滴滴的
+        </textarea>
+
+        <hr/>
+        <!--按钮组件 使用button实现提交-->
+        <button type="submit">提交按钮</button>
+        <button type="reset">重置按钮</button>
+        <button type="button">一个按钮</button>
+
+        <hr/>
+        <!--其他表单辅助标签fieldset-->
+        <fieldset>
+            <legend>用户登录信息</legend>
+            <input type="text" name="username3" size="50" maxlength="10" placeholder="请输入用户名"><br>
+            <input type="password" name="password" value="" placeholder="请输入密码">
+
+            <hr />
+            <input type="submit" value="提交信息">
+        </fieldset>
+
+        <hr/>
+        <!--其他表单辅助标签label 方法1-->
+        <input type="radio" name="gender" value="male" id="one"><label for="one">男</label>
+        <input type="radio" name="gender" value="female" id="two"><label for="two">女</label>
+        <input type="radio" name="gender" value="unknown" id="three"><label for="three">不男不女</label>
+
+        <hr/>
+        <br/>
+        <!--其他表单辅助标签label 方法2-->
+        <label for="one1">
+        <input type="radio" name="gender" value="male" id="one1" checked>男</label>
+
+        <label for="two2">
+        <input type="radio" name="gender" value="female" id="two2">女</label>
+
+        <label for="three3">
+        <input type="radio" name="gender" value="unknown" id="three3">不男不女</label>
+
+
+
+    </form>
+</body>
+</html>

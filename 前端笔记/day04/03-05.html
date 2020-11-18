@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置边框属性</title>
+    <style>
+        .item{
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+            /*
+            设置边框的三个值应该都写上
+            边框样式:dashed solid dotted
+            */
+            border: 3px dotted #f00;
+            border-top: 5px solid #0f0;
+            border-left:6px dashed yellow;
+            border-radius: 20px 40px 80px 100px ; /*圆角处理,给一个值是设置四边,四个值分别是从左上角开始的顺时针方向角的属性
+            给两个值是分别设置左上右下对角,和另外一组对角*/
+
+            /*box-shadow: 20px 20px 10px 20px cyan;*/
+        }
+        .item:hover{
+            box-shadow: 10px 10px 10px 10px grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+       <!-- <br>angular2html-->
+       <!-- <br>border:宽度 样式 颜色;-->
+       <!-- <br>border-color;-->
+       <!-- <br>border-style; 边框样式：solid实现，dotted点状线，dashed虚线-->
+       <!-- <br>border-width:-->
+       <!-- <br>border-left-color;-->
+       <!-- <br>border-left-style;-->
+       <!-- <br>border-left-width:-->
+       <!-- <br>CSS3的样式-->
+       <!-- <br>border-radius：圆角处理-->
+       <!--<br> box-shadow: x轴偏移 y轴偏移 模糊度 扩散成都 颜色 inset内阴影 设置或检索对象阴影-->
+    </div>
+</body>
+</html>

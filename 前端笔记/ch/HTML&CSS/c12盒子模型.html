@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        .one{
+            width: 200px;
+            height: 200px;
+            background: cyan;
+            border: 1px solid orange;
+        }
+        .two{
+            width: 300px;
+            height: 300px;
+            background: cyan;
+            border: 1px solid orange;
+            padding: 50px 30px 40px 20px;/*从上边开始顺时针, 三个值则为"上中下"*/
+        }
+        .two_1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 1px solid orange;
+
+        }
+        .three{
+            width: 600px;
+            height: 600px;
+            background: none;
+            border: 1px solid red;
+            overflow: auto;
+        }
+        .three *{
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 1px solid red;
+            margin: 10px;
+            /*overflow: scroll;*/
+        }
+        .con,.con2{
+            width: 400px;
+            height: 200px;
+            background: darkseagreen;
+            padding: 20px;
+        }
+        .con:before,.con2:before{
+            content:"😍❤❤❤❤"/*在网页中不支持选中*/
+        }
+        .con2:after{
+            content:url("c12.jpeg");
+        }
+
+    </style>
+</head>
+<body>
+    <!--边框-->
+    <div class="one"></div>
+    <hr/>
+    <!--内补白-->
+    <div class="two">
+        <div class="two_1"></div>
+    </div>
+    <!--外间距-->
+    <div class="three">
+        <div class="three_1">1</div>
+        <div class="three_2">2</div>
+        <div class="three_3">3</div>
+        <div class="three_4">4</div>
+    </div>
+    <!--内容-->
+    <hr/>
+    <div class="con">珍惜单身的日子</div>
+    <hr/>
+    <div class="con2">珍惜单身的日子</div>
+</body>
+</html>

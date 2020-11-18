@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    //生成一个10*5的表格
+    //输出表格标签
+    // document.write('<table border="1" width="500"');
+    // i = 0;
+    // while (i<5){
+    //     document.write('<tr>');
+    //     i++;
+    //     var j = 1;
+    //     while (j<=10){
+    //         document.write('<td>'+i+'-'+j+'</td>');
+    //         j++
+    //     }
+    //     document.write('</tr>');
+    // }
+    // // dw = document.write;
+    // document.write('</table>');
+
+    //JS会把定义的函数提前加载到环境中,所以可以在定义函数的代码块前面调用.php也是...写这个干啥
+    function my_table(row, col){
+        document.write('<table border="1" width="500"');
+        i = 0;
+        while (i<row){
+            document.write('<tr>');
+            i++;
+            var j = 1;
+            while (j<=col){
+                document.write('<td>'+i+'-'+j+'</td>');
+                j++
+            }
+            document.write('</tr>');
+        }
+        // dw = document.write;
+        document.write('</table>');
+        return('return值这是')
+        }
+    a = my_table(3, 5);
+    document.write(a)
+
+    //函数内部不用var关键字声明的变量都是全局变量, 没有global方法啥的
+    //变量作用域链: L E G B
+    //回调函数; 递归函数(套娃思想, 有了新的领悟...very good)
+    //内部函数(函数嵌套)
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

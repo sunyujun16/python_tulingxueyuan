@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环结构</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    //新的输出方式 console.log('') alert('')
+    document.write('正着念能飞,倒着念能吃,八级大狂风<br/>');
+
+    i = 0;
+    while (i <= 100){
+        i++;
+        document.write(i);
+    }//
+    /*
+    循环:
+        while
+        do...while
+        for...in
+     */
+
+    //生成一个10*5的表格
+    //输出表格标签
+    document.write('<table border="1" width="500"');
+    i = 0;
+    while (i<5){
+        document.write('<tr>');
+        i++;
+        var j = 1;
+        while (j<=10){
+            document.write('<td>'+i+'-'+j+'</td>');
+            j++
+        }
+        document.write('</tr>');
+    }
+    // dw = document.write;
+    document.write('</table>');
+
+
+    //do...while 其实就是倒装句,但是会先do一次再进行判断,很少用
+    /*
+    do{
+        循环内容..
+        循环内容....
+    }while(判断语句)
+     */
+
+    //for循环 for(var i = 1; i<=100; i++){...}
+    /*
+    for(变量定义;判断条件;变量自增或自减){
+        代码...
+    }
+    1 定义变量
+    2 判断条件
+    3 true则执行
+    4 变量自增
+    5 判断条件
+     */
+
+    var syj = new Object();
+    syj.name = '孙宇军';
+    syj.age = 26;
+    syj.wife = '刘奕含';
+
+    // document.write(syj);
+
+    for (var attr in syj){
+        document.write(attr, ':', syj[attr],'<br/>');
+        console.log(attr, syj[attr]);
+    }
+
+
+    //其他流程控制语句: with; break; continue(数据过滤)
+    //with指定对象, 属性不需要加前缀
+    var lyh = new Object();
+    lyh.name = '刘奕含';
+    lyh.age = 26;
+    lyh.husband = '孙宇军';
+
+    with (lyh){
+        console.log('name: ', name);
+        console.log('夫君: ', husband)
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

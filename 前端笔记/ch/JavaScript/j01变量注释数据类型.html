@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量数据类型</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script>
+    // 这是注释
+    // 声明变量, 但是不给值
+    var x;
+    x = '模拟大爷';
+
+    //将变量输出到控制台
+    console.log(x);
+
+    //修改变量
+    x = '模拟大娘';
+    console.log(x);
+
+    // 命令执行符;或者回车
+
+    /*
+    数据类型:
+        undefined 类型
+        string 字符串
+        number 数值类型
+        boolean 布尔类型
+        function 函数类型
+        object 对象类型
+     */
+
+    var str1 = '刘奕含是大美女';
+    console.log(str1);
+    console.log(typeof str1);
+
+    var a = '刘奕含';
+    var b = 'is';
+    var c = 'beautiful'
+
+    /*
+    转义字符
+    回车按键,根据操作系统得到的字符是不同的
+
+        Windows     \r\n
+        Linux   \n
+        MacOS   \r 或者 \n(10.9版本后)
+    */
+
+    /*
+    数值类型:
+        1.整型
+            十进制
+            八进制 0777 ,以0开头
+            十六进制 0x开头
+
+        2.浮点型
+            科学技术法科学计数法 314e-2
+
+        3.NaN: not a number, 任何时候都不希望看到这东西
+            自己定义NaN, 是最傻逼的
+            var no6 = NaN
+
+            运算错误: x = 1 - '一百' --> NaN
+            NaN不等于任何东西, 包括它自己, 唯一检测办法isNaN()
+      */
+
+     /*
+     布尔类型:true; false
+      */
+
+     /*
+     函数类型: 声明语法--> function
+
+        function paoniu(){
+            console.log('刘奕含是世界上最漂亮的女人')
+        }
+
+        匿名函数(表达式)
+        var john = function(){
+            console.log('说得没错')
+        }
+        console.log(typeof john) --> function
+      */
+
+     /*
+     对象类型:
+
+      */
+     var obj = new Object(); //创建一个对象
+    //查看数据类型
+    console.log(typeof obj);
+    console.log(obj)
+
+    //特别的对象 null
+    console.log(null == undefined); //值判断,true
+    console.log(null === undefined); //类型判断,false
+    //
+
+    //数据类型转换: 显式转换; 隐式转换
+    //隐式转换 自动向更精确的数据类型转换
+    var no1 = 5;
+    var no2 ='15';
+
+    var res = no1 + no2; //得到字符串515,隐式数据类型转换, 和python不一杨
+
+    //判断
+    if (true){
+        console.log('123')
+    }
+
+    //显式转换
+    /*
+    // undefined均转换为NaN
+    parseInt();
+        可转换的类型:浮点数,数字开头的字符串,对象或函数或布尔值或者NaN或者非数字开头的字符串都会转换值为NaN.
+    parseFloat();
+        可转换的类型: 从左侧开始,识别到的第一个浮点格式字符串,必须数字开头
+    Number();
+        针对所有类型的转换:
+            undefined --> NaN, number (value, type)
+            number -- > x, number
+            str --> x, number字符串内不能有任何非数字
+            bool --> 1or0, number
+            function --> NaN, number
+            object --> NaN, number
+            null --> 0, number, 只有Number有这个能力.
+    Boolean();
+        NaN/undefined --> false, boolean
+        int/float --> 非零为true
+        str --> 非空为true
+        function --> true
+        object --> true
+        null --> false
+    String();
+        undefined --> 'undefined'
+        anything --> 'anything'
+        object --> 由构造函数决定输出形式
+     */
+    var var1 = '250';
+    var res = parseInt(var1);
+    console.log(res, typeof res);
+
+    var var1 = '250.2cm';
+    var res = parseInt(var1);
+    console.log(res, typeof res);
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+

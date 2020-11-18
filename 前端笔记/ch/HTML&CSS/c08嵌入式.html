@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌入式CSS</title>
+    <style>
+        /*标签选择器*/
+        p{
+            color: blue;
+        }
+        div{
+            color: red;
+        }
+        /*类选择器*/
+        .luoli{
+            color: green;
+        }
+        /*id选择器*/
+        #syj{
+            color: #985f0d;
+        }
+        #syj{
+            color: pink;
+        }
+        /*组合选择器*/
+        #syj,#lyh{
+            color: pink;
+        }
+        /*关系选择器*/
+        div p{
+            color: darkorange;
+        }
+        /*通用选择器,选中页面所有标签*/
+        *{
+            /*border: 1px solid grey;*/
+
+            /*样式清零效果*/
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        ul *{
+            border: 1px dashed green;
+        }
+        /*伪元素选择器*/
+        a:link{
+            /*正常状态*/
+            color: red;
+        }
+        a:hover{
+            /*悬停状态*/
+            color: blue;
+        }
+        a:active{
+            color:yellow;
+        }
+        a:visited{
+            color: indigo;
+        }
+        tr:hover{
+            background-color: pink;
+        }
+        td:hover{
+            background-color: green;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p id="syj">十个萝莉九个富,还有一个住别墅syj</p>
+    <p class="luoli">十个萝莉九个富,还有一个住别墅luoli</p>
+    <p>十个萝莉九个富,还有一个住别墅</p>
+    <p class="luoli">十个萝莉九个富,还有一个住别墅luoli</p>
+    <p>十个萝莉九个富,还有一个住别墅</p>
+    <p>十个萝莉九个富,还有一个住别墅</p>
+    <hr/>
+
+    <div>十个萝莉九个富,还有一个住别墅</div>
+    <div class="luoli">十个萝莉九个富,还有一个住别墅luoli</div>
+    <div>十个萝莉九个富,还有一个住别墅</div>
+    <div id="lyh">十个萝莉九个富,还有一个住别墅lyh</div>
+    <div>十个萝莉九个富,还有一个住别墅</div>
+    <div>十个萝莉九个富,还有一个住别墅</div>
+    <hr/>
+
+    <div>
+        <p>十个萝莉九个富,还有一个住别墅</p>
+        <p>十个萝莉九个富,还有一个住别墅</p>
+        <p>十个萝莉九个富,还有一个住别墅</p>
+        <p>十个萝莉九个富,还有一个住别墅</p>
+    </div>
+    <hr/>
+
+    <ul>
+        <li>阿斯顿疯狂聚敛</li>
+        <li>离开的斯洛伐克</li>
+        <li>阿斯大额恢复的红色</li>
+    </ul>
+    <hr/>
+
+    <ol>
+        <li>橘红色</li>
+        <li>刘奕含</li>
+        <li>乳白色</li>
+    </ol>
+    <hr/>
+
+    <!--四个状态:正常状态,鼠标悬停,鼠标点击,鼠标点击后-->
+    <a href="./123.jpg">美女图片</a>
+    <hr/>
+
+    <table border="1" width="500" height="500">
+        <tr>
+            <td>111</td>
+            <td>111</td>
+            <td>111</td>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>111</td>
+            <td>111</td>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>111</td>
+            <td>111</td>
+        </tr>
+
+
+    </table>
+
+
+</body>
+</html>

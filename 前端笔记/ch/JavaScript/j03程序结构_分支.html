@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分支结构</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    // 分支结构
+    console.log('分支--------------');
+    var lyf = '不行 ';
+    if (lyf === '漂亮'){
+        console.log('在一起吧');
+    }else{
+        console.log('算了');
+    }
+    // 真区间(if区间)/假区间(else区间)
+    // else if()  注意这里的空格
+
+
+    // switch..case分支, 可以走一个分支,也可以连续多个分支
+    console.log('switch----------');
+    var lyh = 1;
+    switch (lyh){//lyh只能是整型,布尔值,字符串
+        case 1:
+            console.log('case1');
+            break;
+        case 2:
+            console.log('case2');
+        default:
+            console.log('default');
+    }
+
+    //巢状分支
+    console.log('巢状分枝---------');
+    var xqm = true;
+    var lm = true;
+    var jm = false;
+
+    if (xqm === true){
+        console.log('进小区');
+        if (lm === true){
+            console.log('进楼门');
+            if (jm === true){
+                console.log('到家了')
+            }else {
+                console.log('媳妇开门!')
+            }
+        }else {
+            console.log('楼进不去');
+        }
+
+    }else{
+        console.log('滚犊子');
+    }
+
+</script>

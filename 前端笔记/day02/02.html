@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+    <!--form标签来划定一个表单区域
+        action:数据的提交地址
+        method:数据的提交方式 get, post
+            get: 表单提交默认是get方式进行数据传输,通过url地址传输数据,数据显示在地址栏当中
+                传输数据有大小限制,根据浏览器的不同,可传输数据大小不同, 不安全
+            post: 数据不通过url地址传参,相对安全
+                数据没有大小限制
+                一般表单指定使用Post方式提交数据
+        enctype:如果有表单中文件上传必须有这个"multipart/form-data"用于文件转码
+        -->
+    <form name="信息统计" method="post" enctype="multipart/form-data">
+        <!--
+            表单控件必须要有name,作为数据的键
+            type:指定表单控件功能(普通文本, 密码框 radio单选, checkbox多选框, submit提交, reset重置, hidden隐藏显示)
+            placeholder占位文本
+            输入框-->
+
+        用户名:<input type="text" name="username" placeholder="秦输入用户名"><br>
+        密码:<input type="password" name="password"><br>
+        <!--单选框 type="radio" 必须有name和value及其值 并且一组单选框name值必须相同-->
+        性别:<input type="radio" name="gender" value="male" checked>男
+            <input type="radio" name="gender" value="female">女
+        <br>
+        <!--多选框type=checkbox
+            必须指定name and value, 同组多选框name的值相同
+            -->
+        爱好:<br>
+        <input type="checkbox" name="hobby" value="football">足球<br>
+        <input type="checkbox" name="hobby" value="basketball">篮球<br>
+        <input type="checkbox" name="hobby" value="sex">做爱<br>
+
+        <!--下拉框必须配合option来使用, 以选择value值-->
+        学历:<br>
+            <select name="education_background">
+                <option value="junior">小学</option>
+                <option value="middle">初中</option>
+                <option value="high">高中</option>
+                <option value="college">大学</option>
+            </select><br>
+
+        <!--type=file文件上传 -->
+        清选择要上传的文件:<br>
+        <input type="file" name="file"><br>
+
+        <!--textarea,文本域-->
+        请输入个人描述:
+        <textarea name="self_info" id="">请输入个人信息</textarea><br>
+
+        <!--按钮 -->
+        <input type="submit" name="sub" value="Confirm" readonly ><br>
+        <button>提交(这个没用)</button><br>
+
+        <!--重置按钮-->
+        <input type="reset"disabled>
+
+        <!--隐藏域 hidden 不需要用户查看和交互的东西 以隐藏形式提交到后台-->
+        <input type="hidden" name="id" value="0">
+
+
+    </form>
+</body>
+</html>

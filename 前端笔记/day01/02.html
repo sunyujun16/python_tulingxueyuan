@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用的HTML块级标签(块元素)</title>
+</head>
+<body>
+<!--常用的有语义的块级元素 有默认样式 独占一行-->
+    <!--标题标签 h1-h6 -->
+    <!--这是一个标题-->
+    这是一个哈哈
+    这是另一个哈哈
+    <h1>这是一级标题</h1>
+    <h2>这是二级标题</h2>
+    <h3>这是三级标题</h3>
+    <!--段落标签 独占一行 有默认样式-->
+    <!--br标签强制换行-->
+    <p>超文本标记语言<br>(段落标签)</p>
+    <p>超文本标记语言(段落标签)</p>
+
+    <!--列表-->
+        <!--无序列表 ul li 有默认样式 独占一行-->
+        <!--ul zhong只能写li标签 ol也一样-->
+        <ul>
+            <li>列表一</li>
+            <li>列表2</li>
+            <li>list3</li>
+        </ul>
+
+    <!--有序列表ol li 有自己的默认样式,独占一行-->
+            <!--type这是有序列表的标记类型
+            start设置列比哦呵向从第几个开始-->
+        <ol type="I" start="3">
+            <li>有序列表哈哈</li>
+            <li>有序列表嘿嘿</li>
+
+        </ol>
+
+        <!--zi定义列表 dl:list dt:topic dd:definition-->
+        <dl>
+            <dt>这是自定义列表dl中的dt</dt>
+            <dd>这是资定义列表中的dd</dd>
+            <dt>第二个自定</dt>
+            <dd>解释项</dd>
+        </dl>
+    <!--表格标签 table声明一个表格 tr行 td列 th表头-->
+    <!--shengmign一个表格-->
+    <!--
+        tabel属性:
+            border:表框
+            cellpadding:内容边距
+            cellspacing:单元格间距
+    -->
+    <table border="10px" cellpadding="10px" cellspacing="0" width="800px" height="500">
+
+        <!--这是表格中的第一行-->
+        <tr align="center" >
+            <!--这是表格中的左表头默认居中 加粗 就是excel中的标题行-->
+            <th colspan="4">这是表头</th>
+            <!--这是表格当中的列
+                    colspan: 横向占用的列数, 宽度
+                    rowspan: 竖向占用的行数, 高度
+                    等等-->
+            <td colspan="4">这是第一行第1列</td>
+    <!--        <td>这是第一行第2列</td>-->
+    <!--        <td>这是第一行第3列</td>-->
+    <!--        <td>这是第一行第4列</td>-->
+        </tr>
+
+        <tr valign="top">
+            <td rowspan="3">这是第二行第1列</td>
+            <td>这是第二行第2列</td>
+            <td>这是第二行第3列</td>
+        </tr>
+
+        <tr align="right">
+             <!--这是表格中的第2行-->
+    <!--                <td>这是第3行第1列</td>-->
+            <td>这是第3行第2列</td>
+            <td>这是第3行第3列</td>
+        </tr>
+
+    </table>
+
+<!--水平分割线-->
+    <hr>
+
+<!--区块元素 没有默认的语义 div 独占一行 一般用来划定一块区域 配合CSS在布局当中使用-->
+    <div>这是一个div</div>
+<br>
+<br>
+<br>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

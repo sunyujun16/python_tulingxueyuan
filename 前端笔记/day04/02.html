@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体文本设置</title>
+    <style>
+        .fonts{
+            /*谷歌浏览器字体最小为12px,傻逼.*/
+            color:#3c9;
+            font-size: 30px;
+
+            /*设置字体 font-family*/
+            font-family:'free mono';
+
+            /*斜体*/
+            /*font-style:italic;*/
+
+            /*字重,即加粗等*/
+            font-weight:lighter;
+
+            /*行高*/
+            line-height:50px;
+
+            /*首行缩进*/
+            text-indent:60px;
+
+            /*水平对齐方式 center居中*/
+            text-align: left;
+
+        }
+        .item2{
+            width: 800px;
+            height: 200px;
+            background-color: darkgoldenrod;
+
+            line-height:200px;/*值为父级元素的高度*/
+        }
+        a{
+            /**/
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fonts">
+        angular2html
+        <br>color 设置文字的颜色，如： color:red;
+        <br>font-size 设置文字的大小，如：font-size:12px;
+        <br>font-family 设置文字的字体，如：font-family:'微软雅黑';
+        <br>font-style 设置字体是否倾斜，如：font-style:'normal'; 设置不倾斜，font-style:'italic';设置文字倾斜
+        <br>font-weight 设置文字是否加粗，如：font-weight:bold; 设置加粗 font-weight:normal 设置不加粗
+        <br>line-height 设置文字的行高，如：line-height:24px;
+        <br>text-decoration 设置文字的下划线，如：text-decoration:none; 将文字下划线去掉
+        <br>text-indent 设置文字首行缩进，如：text-indent:24px; 设置文字首行缩进24px
+        <br>text-align 设置文字水平对齐方式，如text-align:center 设置文字水平居中
+    </div>
+    <br>
+    <div class="item2">
+        设置单行文本垂直居中,值为父级元素的高度
+        <br>
+        <a href="http://www.baidu.com">链接:百度一下子</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css使用</title>
+    <!--外链式 通过link标签引入css文件 要在head标签当中引入 优先级最低, 因为最先调用-->
+    <!--<link rel="stylesheet" href="./01.css">-->
+
+    <!--嵌入式 是同坐style标签来写css 也要写在head标签当中 优先级看调用顺序-->
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+
+</head>
+<body>
+    <!--内联式 同style属性来设置css样式 不推荐这样使用 一般使用外链式 优先级最高因为, 最后被调用-->
+    <!--<div style="width: 200px; height: 300px; background-color: yellow"></div>-->
+    <div></div>
+</body>
+</html>

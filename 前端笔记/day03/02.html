@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css三种基本选择器</title>
+    <style>
+        /*标签选择器 通过标签来设置元素的样式 影响范围最大 所有<div>都受影响*/
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        /*类选择器 通过.类名 影响范围为类名相同的元素*/
+        .item1{
+            width: 200px;
+            height: 200px;
+            /*background-color: blue;*/
+            /*background-color注释掉之后, 就会受到标签选择器background-color的影响*/
+        }
+        .item2{
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+        }
+        .bg{
+            background-color: red;
+        }
+        /* #id选择器 通过id的值来设置元素的样式 元素的id不可以重名 具有唯一性*/
+        #box1{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            /*边框*/
+            border: 1px solid darkred;
+        }
+        /*#box2{*/
+        /*    width: 400px;*/
+        /*    height: 400px;*/
+        /*    background-color: green;*/
+        /*    !*边框*!*/
+        /*    border: 1px solid darkred;*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+    <div class="item1"></div>
+    <div class="item2 bg"></div>
+
+    <div id="box1"></div>
+</body>
+</html>

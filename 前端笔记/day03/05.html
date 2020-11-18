@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+    <style>
+        /*设置鼠标悬停时的状态*/
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .box1:hover{
+            /*shubiaoxuanting*/
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        /*after 在元素里面的尾部插入内容*/
+        .box1:after{
+            content:' LiuYihan'
+        }
+        .box1:before{
+            content:'I '
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">love</div>
+</body>
+</html>

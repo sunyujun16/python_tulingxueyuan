@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>颜色的表示方式</title>
+    <style>
+        .item1{
+            width: 200px;
+            height: 200px;
+            /*
+            使用16进制的值表示颜色,六位,每两位分别表示R,G,B, 取值范围0-f
+            #000000代表黑色, 或者#000
+            #00ff00代表绿色, 或者#0f0
+            */
+            /*background-color: #ffff00;*/
+            /*使用RGB颜色, 或者RGBA(a为透明度取值0-1)*/
+            /*background-color: rgb(100,200,210);*/
+
+            background-color: rgba(200,255,100,0.5);
+        }
+        .item1:hover{
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1">春风得意马蹄疾,&nbsp一日看尽长安花</div>
+</body>
+</html>
