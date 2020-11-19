@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //JS是基于对象的语言, 而不是面向对象的语言
+    /*
+    对象原型 --> 对象实例
+    万能对象: 可以制作任何一种对象(是在底层代码中由类实现的), 所有其他对象都是使用万能对象创建的.
+    也就是说JS当中是没有类的
+
+    对象: 💠高内聚, 低耦合
+    */
+
+    //创建对象1
+    var obj = Object();
+    obj.name = '小丽';
+    obj.gender = 'female';
+    obj.fuck = function(){
+        alert('come in baby.')
+    };
+
+    // console.log(obj, typeof obj);
+    // obj.fuck();
+
+    //创建对象2 --> 对象字面量
+    var syj = {
+        gender: 'male',
+        name: '孙宇军',
+        length: '15.6cm',
+        age: 26,
+
+        eat:function(){
+            alert('人生就是吃喝拉撒')
+        },
+        fuck:function () {
+            alert('oh,yes.')
+        }
+    };
+    // syj.fuck();
+
+    //使用对象成员, 修改对象承成员
+    //略
+    //删除
+    // delete obj.fuck;
+
+    //实例化??对象
+    var ynr = {
+        age:18,
+        sex:'女',
+        hobby:'君子汤',
+
+
+        eat:function () {
+            alert('吃了吗您那?')
+        },
+        fuck:function () {
+            alert('don\'t be shy.')
+        },
+    };
+
+    for (var k in ynr){
+        console.log(k, ynr[k]);
+    }
+
+
+
+
+
+
+
+
+</script>

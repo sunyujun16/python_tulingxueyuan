@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    //String对象原型
+    var wow = '';
+    var wow = new String();//创建字符串的中间过程, 解析器操作
+
+    //charA(n) 返回第n个字符
+    //charCodeAt() 返回第n个字符的编码号
+    //indexOf(n) 查找第一次出现n的位置  lastIndexOf() 查找最后一个
+    //slice(+-x,+-y) 切片
+    //split(s) 用s切成数组, 返回的数组不包含s; 反响操作为arr.join('')
+    //replace(o,n) o --> n 只从头开始替换一次
+    //toUpperCase()
+    //toLowerCase()
+    //match() 正则匹配
+    var s1 = '10世9贫凑得8两7钱';
+    var res = s1.match(/\d+/); // 找出字符串中的第一个连续数字
+    console.log(res);
+
+    //search() 正则查找; 只找到第一个
+
+    //substr(index, length) 取得子串; 类似slice(),但第二个参数含义不同
+
+    //subString(index1,index2) 取得子串; 参数不考虑前后顺序, 结果不包括较大数位置, 参数为负等同于0.
+
+
+
+
+
+
+</script>

@@ -46,13 +46,145 @@
         return('return值这是')
         }
     a = my_table(3, 5);
-    document.write(a)
+    document.write(a);
 
     //函数内部不用var关键字声明的变量都是全局变量, 没有global方法啥的
     //变量作用域链: L E G B
     //回调函数; 递归函数(套娃思想, 有了新的领悟...very good)
     //内部函数(函数嵌套)
+    //在此之前,都是'声明函数'
+    //表达式函数, 即匿名函数, 这个知识点JS是先驱
+    var jia = function (a, b) {
+        return console.log(a + b)
+    };
+    jia(1.5, 2);
+    //表达式函数的内部函数特征
+    function outer(){
+        var inner = function(){
+            alert('顶风尿市长');
+        };
+        inner();
+    }
+    // outer();
 
+    //自执行函数(定义时调用) 不用函数名,函数体外部加括号, 直接调用, 内部是独立的命名空间
+    // (function(){
+    //         alert('顶风尿市长');
+    // })();
+
+    function jsq(x, y, fh) {
+        return fh(x, y);
+    }
+    var result = jsq(5, 8, function (a, b) {return a + b});
+    console.log(result);
+
+    //收集参数
+    function sum() {
+        var total = 0;
+        for (var num in arguments){
+            total += num;
+        }
+        console.log('total: ', total)
+    }
+    sum(1, 2, 3); // --> 0012
+
+     function sum2() {
+        var total = 0;
+        for (var num=0;num < arguments.length;num++){
+            total += arguments[num];
+        }
+        console.log('total: ', total)
+    }
+    sum2(1, 2, 3); //
+
+    //递归内部调用函数本身语法: arguments.callee
+
+    //闭包: 重要!!!
+    //闭包1, 利用全局变量进入函数赋值
+    var syj;
+
+    function juhua_home() {
+        var tv = '电视';
+        var wm = '洗衣机';
+        var fl = '手电筒';
+
+        var father = function () {
+
+        };
+        var brother = function () {
+
+        };
+        var juhua = function () {
+
+        };
+
+        syj = function () {
+            return tv
+        };
+
+    }
+
+    juhua_home();
+    console.log(syj());
+
+
+    //闭包2, 返回有固定值的不需要传参的函数; Tips:匿名函数表达式要加分号;
+    function juhua_jia() {
+        var tv = '电视';
+        var wm = '洗衣机';
+        var fl = '手电筒';
+        var father = function () {
+        };
+        var brother = function () {
+
+        };
+        var juhua = function () {
+
+        };
+
+        lyh = function () {
+
+                items = tv + wm + fl;
+                // for(var num=0;num < arguments.length;num++){
+                // items += arguments[num];
+                // }
+                return items;
+
+            // return syj;
+        };
+        return lyh;
+    }
+    juhua_jia();
+
+    args = juhua_jia()();
+    console.log(args);
+
+    // a = ''
+    // a += 'asdf'
+    // console.log(a)
+
+
+    //感应函数
+    function hello() {
+        if(arguments.callee.caller === zhangsan){
+            console.log('你大爷, 很高兴认识你');
+        }else if(arguments.callee.caller === lisi){
+            console.log('吃了吗傻屌?');
+        }
+    }
+
+    //陌生人
+    function zhangsan() {
+        hello();
+    }
+
+    //熟人
+    function lisi() {
+        hello();
+    }
+
+    zhangsan();
+    lisi();
 
 
 </script>

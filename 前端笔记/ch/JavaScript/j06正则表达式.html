@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*制定一个规则, 根据这个规则对字符串进行筛选操作
+    正则的组成:
+        正则定界符
+        原子
+        元字符
+        模式修正符
+     */
+
+    //正则定界符
+    var zz = /a/; //这是一个正则表达式, /为JS的正则定界符, 不同语言都不同
+    console.log(zz, typeof zz);
+
+    //原子: 组成正则的基本单位, 所有可见或不可见字符都属于原子
+    /*
+    \d decimal 0-9的一个数字
+    \D 非decimal 的字符
+    \w 能当作变量的字符 [0-9,a-z,A-Z,_,...]
+    \W 反上
+    \s 不可见字符 空格/缩进/换行
+    \S 可见字符
+     */
+
+    /*
+    元字符: 用于修饰原子的符号
+    []原子列表 : 这里面的我都要
+    [^]排除列表 : 除了这里面的我都要
+    + 一个以上的指定原子
+    * 0个以上的指定原子
+    ? 0或1个指定原子
+    {m,n} 最少m最多n个指定原子, 可以不指定n({m,})
+    {m} 必须m个
+    ^ 抑扬符号 限制字符串必须在整个字符串的开头
+    $ 限制字符串的末尾
+    ^ ... $ 精确匹配
+    . 表示除了\n之外的任意字符
+    | 唯一一个逻辑运算 (万能钥匙)
+    \b 词边界
+    \B 非词边界
+    () :
+        1 将多个原子作为一个整体
+        2 将括号中的内容暂存在内存方便调用
+        3 (|) 改变优先级, 示例为|选取括号里的元素
+     */
+
+
+    // match() 进行字符串正则匹配
+    // var str1 = 'give1 you2 color2 see3 see4 哈哈5 可7 a16 16a 22为i';
+    //
+    // var res = str1.match(/\d/);
+    // console.log(res);
+    // var res1 = str1.match(/[13579]/);
+    // console.log(res1);
+    //
+    // var str2 = '.gooogleee';
+    // var res2 = str2.match(/^go{2,6}gle/);
+    // console.log(res2);
+    //
+    var str3 = '你大爷,你二爷.';
+    var res3 = str3.match(/大爷|二爷/g);
+    console.log(res3);
+    //
+    // var str4 = 'www.googogogoggogogle.com';
+    // var res4 = str4.match(/(go){2}gle/g);
+    // console.log(res4);
+
+
+    /*
+    模式修正符
+    i ignore 忽略大小写
+    g global 全局匹配
+    m multiline 多行模式
+    可以同时使用
+     */
+
+
+    // var s1 = 'www.baidu.com';
+    // var r1 = s1.match(/Baidu/i);
+    // console.log(r1);
+    //
+    // var s2 = 'www.baidu.com\nwww.t66y.com\nwww.pornhub.com';
+    // var r2 = s2.match(/^www.t66y.com$/m);//m修正符将\n处断开,当成多个字符串处理.
+    // console.log(r2);
+
+
+    //贪婪模式: 小孩子才作选择,我全都要!
+    // var wives = 'ha[刘奕含]hiha[宋轶]hiha[万茜]hiha[江一燕]hi';
+    // var result = wives.match(/ha\S+hi/g);
+    // console.log(result);//--> [ "ha[刘奕含]hiha[宋轶]hiha[万茜]hiha[江一燕]hi" ]
+    // //这就是贪婪模式, 会获取尽可能多的结果
+    //
+    // //非贪婪的固定写法:   .*?
+    // var wives = 'ha[刘奕含]hiha[宋轶]hiha[万茜]hiha[江一燕]hi';
+    // var result = wives.match(/ha.*?hi/g);
+    // console.log(result);//Array[ "ha[刘奕含]hi", "ha[宋轶]hi", "ha[万茜]hi", "ha[江一燕]hi" ]
+
+
+    //(?:)取消暂存操作
+    var str4 = 'www.googogogoggogoogle.com';
+    var res4 = str4.match(/(?:go)ogle/g);
+    console.log(res4);
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
