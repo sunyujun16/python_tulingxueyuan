@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兼容性工具</title>
+    <style>
+        div{
+            height: 200px;
+            background: #2e6da4;
+        }
+    </style>
+</head>
+<body>
+<div id="pipi"></div>
+</body>
+</html>
+<script>
+    //各种情况
+    //DOM0还是DOM2   能用DOM2就DOM2
+    //IE还是非IE
+
+
+    //事件工具, 实现兼容性靠内部的if语句.
+    var eventTools={
+        //添加事件
+        //element标签/元素   type事件类型    func事件函数
+        addEvent:function (element,type,func) {
+            //判断是否支持DOM2的addEventListener方法
+            if(element.addEventListener){
+                element.addEventListener(type,func,false);//非IE DOM2
+            }else if(element.attachEvent){
+                element.attachEvent('on'+type,func);//ie DOM2
+            }else{
+                //element.onclick = func // 正确,但这里onclick是个字符串参数
+                element['on'+type] = func; //对象成员是变量时得这么写
+            }
+        },
+
+        //取消事件
+        delEvent:function (element,type,func) {
+            if(element.removeEventListener){
+                element.removeEventListener(type,func,false);//非IE DOM2
+            }else if(element.detachEvent){
+                element.detachEvent('on'+type,func);//ie DOM2
+            }else{
+                //element.onclick = func // 正确,但这里onclick是个字符串参数
+                element['on'+type] = null; //对象成员是变量时得这么写
+            }
+        },
+
+    };
+
+    //获取元素节点
+    var pipi = document.getElementById('pipi');
+
+    //事件函数
+    function show() {
+        alert('放了一个屁');
+    }
+
+    //添加事件函数到元素/标签
+    eventTools.addEvent(pipi,'click',show);
+
+
+</script>

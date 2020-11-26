@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+    <div>
+        asdf
+    </div>
+    <button onclick="stopds()">停下来</button>
+    <button onclick="jg()">警告</button>
+    <button onclick="xz()">选择</button>
+    <button onclick="sr()">输入</button>
+</body>
+</html>
+<script>
+    /*什么是BOM
+    Browser Object Model  浏览器和JS之间的接口
+        DOM(Document对象)
+        history对象, 历史纪录对象
+        location对象, 地址对象
+        frames对象, 框架对象
+        screen对象, 屏幕信息对象, 屏幕信息的收取等
+        navigator对象, 浏览器信息对象
+     */
+
+
+    // BOM在浏览器中的的名称
+    // JS   window对象就是语法的Global固有对象
+    // 浏览器中window对象就是BOM的替身!
+
+    // console.log(window);
+    // console.log(window.document);
+    // console.log(window.history);
+    // console.log(window.screen);
+    // console.log(window.location);
+    // console.log(window.frames);
+    // console.log(window.navigator);
+
+    //JS语法
+    // var girl = '大波妹';
+    // console.log(girl);
+    // console.log(window.girl);
+
+
+    //window对象的自带功能,(不在六大对象之内)
+    //innerHeight  innerWidth   显示浏览器的尺寸
+    console.log(innerHeight); // 低版本ie8等不支持
+
+
+    //浏览器位置属性
+    console.log(window.screenLeft);//top ...
+
+    //l浏览器窗口大小调整(没人用)
+    window.resizeTo(600,1000);//多标签浏览器不支持,除了IE
+    window.resizeBy(100,100);//多标签浏览器不支持,除了IE
+
+    //浏览器位置调整
+    window.moveTo(100,100);//多标签浏览器不支持,除了IE
+    window.moveBy(100,100);//还他妈的不支持,除了IE,草
+
+    //定时执行
+    //方法一: 匿名函数
+    var ds = window.setTimeout(function () {
+        console.log('九浅一深闯入龙潭虎穴');
+    },3000);//单位是ms
+    //方法二: 声明函数
+    //方法三: 第一个参数以字符串方式传入'函数()'
+
+    //清除定时执行
+    function stopds() {
+        window.clearTimeout(ds);
+    }
+
+
+    //循环执行setInterval()
+    //方法一
+    var i = 0;
+    // window.setInterval(function () {
+    //     // console.log('真他妈爽',i);
+    //     // i++
+    // }, 2000)
+    // 方法二:声明函数
+    // 方法三:字符串...同setTimeout()
+
+    //终止循环
+    // var flag = window.setInterval(function () {
+    //     document.write('真他妈爽\n'+i.toString());
+    //     i++;
+    //     if (i===10){
+    //         document.write('爽死了');
+    //         window.clearInterval(flag);
+    //     }
+    // }, 500);
+
+
+    //浏览器的三种弹窗
+    //alert()
+    function jg() {
+        window.alert('FBI Warning');
+    }
+    function xz() {
+        window.confirm('你有鸡鸡吗')//有返回值
+    }
+    function sr() {
+        window.prompt('请输入您的年龄')//有返回值
+    }
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,12 +11,87 @@
 
 <script>
     //ip地址,正则匹配
-    var str = '200.115.100.115';
-    var res = str.match(/(?:(?:\d|[1-9]\d|1\d{2}|2(?:[0-4]\d|5[0-5]))\.){3}(?:\d|[1-9]\d|1\d{2}|2(?:[0-4]\d|5[0-5])){1,3}/);
-    console.log(res)
+    // var str = '200.115.100.115';
+    // var res = str.match(/(?:(?:\d|[1-9]\d|1\d{2}|2(?:[0-4]\d|5[0-5]))\.){3}(?:\d|[1-9]\d|1\d{2}|2(?:[0-4]\d|5[0-5])){1,3}/);
+    // console.log(res);
     // 输出结果 --> Array [ "200.115.100.115" ]
 
+    //对象原型,这种方式一般不用
+    // var str = '200.115.100.115';
+    // var zz = new RegExp(/(?:(?:\d|[1-9]\d|1\d{2}|2(?:[0-4]\d|5[0-5]))\.){3}(?:\d|[1-9]\d|1\d{2}|2(?:[0-4]\d|5[0-5])){1,3}/);
+    // var res = str.match(zz);
+    // console.log(res);
 
+    //正则对象的属性和方法
+    // lastIndex
+    // var str = '200.115.100.115';
+    // var zz = /\d+/g;
+    // var res1 = zz.exec(str);//匹配第一个结果
+    // console.log(res1);
+    //
+    // var res2 = zz.exec(str);//匹配下一个结果
+    // console.log(res2);
+    //
+    // console.log(zz.lastIndex);//记录正则匹配走到哪里了
+    // console.log(zz.source);//获取正则的内容
+    //
+    //
+    // //test
+    // var str2 = '200.115.100.115';
+    // var zz2 = /\d+/g;
+    // var res = zz2.test(str2);//返回是否匹配到了true/false, 仅仅用于测试
+    // console.log(res);
+
+
+    // exec()是对象方法,一步一步去匹配(g模式);  而match(),是字符串的方法,一次性匹配完成;
+    // compile()  --编译(废物利用:修改正则对象的内容,而不是重新创建一个)
+    // var str = '200.115. 100.115';
+    // var zz = /\d+/g;
+    // var res = zz.exec(str);
+    // console.log(res);
+    //
+    // zz.compile('\\s+','g');//修改正则规则
+    // var res = zz.exec(str);
+    // console.log(res);
+
+    //正则完结
+
+
+    // 字符串方法中的正则
+    // 取出连续的相等数字
+    // var str = '我的车牌是浙A1110225344487';
+    // var zz = /(\d)\1+/g;  // 这就是小括号暂存作用的使用
+    // var res = str.match(zz);
+    // console.log(res);
+
+
+    // html代码
+    // var str = '<li>床前明月光</li><li>床前明月光</li><la>床前明月光</li><li>床前明月光</li><li>床前明月光</li>';
+    // var zz = /<([a-z]+)>.*?<\/\1>/g;  // 这就是小括号暂存作用的使用,保证字符串内某项内容前后一致   注意: \n表示第n个括号的内容
+    // var res = str.match(zz);
+    // console.log(res);
+
+
+    //网址正则:
+    /*
+    http://www.baidu.com
+    http://www.bai-du.com
+    http://www.163.com
+    https://www.taobao.com      带有安全套接字的http协议
+    ftp://www.mengni.com        ftp协议 文本传输协议
+    http://163.com              一级网址
+    http://www.163.com          二级网址
+    http://xyq.cbg.163.com      三级网址
+
+    http://www.baidu.net
+    http://www.baidu.org
+    http://www.sina.com.cn
+     */
+
+    var str = 'http://www.ba.s-idu.123.com.cn';
+    var zz = /[a-z]+:\/\/(?:[0-9a-z]+-?[0-9a-z]+\.)+(?:net|com|cn|org|us|ru|jp)/i;
+    var res = str.match(zz);
+    console.log(res);
 
 
 
@@ -27,3 +102,21 @@
 
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

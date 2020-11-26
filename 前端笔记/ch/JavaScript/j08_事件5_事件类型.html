@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件类型</title>
+    <style>
+        div{
+            height: 100px;
+            margin: 10px;
+            color: white;
+            background: #2aabd2;
+        }
+        #dj{
+            background: #2e6da4;width: 300px;
+        }
+        #sj{
+            background: #985f0d;width: 300px;
+        }
+        #area{
+            background: #2aabd2;width: 300px;
+        }
+        #over{
+            background: orangered;width: 300px;
+        }
+        #press{
+            background: grey;
+        }
+        #qm{
+            width: 300px;height: 300px;
+            border: 1px solid black;
+        }
+        #key{
+            width: 300px;height: 100px;
+            border: 1px solid black;
+        }
+        table{
+            /*border:1px solid black;*/
+        }
+        table tr td{
+            width: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>onselectstart看看吧</div>
+    <div id="dj">物是人非事事休<br/>(单击变绿)</div>
+    <div id="sj">欲语泪先流<br/>(双击变绿)</div>
+    <div id="area">听闻双溪春尚好<br/>(鼠标移动)</div>
+    <div id="over">也拟泛轻舟<br/>(over经过)</div>
+    <div id="press">只恐双溪舴艋舟<br/>(按下变绿抬起变灰)</div>
+
+    <form action="http://www.baidu.com" id="form1">
+        <label for="qm" style="border: 1px solid coral">键盘事件(已注释)和复制剪切</label><br/>
+        <textarea id="qm" placeholder="键盘事件和复制剪切">复制&剪切</textarea><br/>
+        <input type="text" name="a" id="key" placeholder="一闪一闪亮瞎眼"><br/>
+        <input type="text" name="usr" value="123阿斯顿法斯蒂芬4" id="inp">
+        <table >
+            <tr>
+                <td>用户名:</td>
+                <td><input type="text" name="usrname" value=""></td>
+            </tr>
+            <tr>
+                <td>昵称:</td>
+                <td><input type="text" name="nickname" value=""></td>
+            </tr>
+            <tr>
+                <td>颜色</td>
+                <td>
+                    <select name="bgcolor">
+                        <option value="red">小红</option>
+                        <option value="purple">小紫</option>
+                        <option value="blue">小兰</option>
+                        <option value="随机">随机</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>提交</td>
+                <td><input type="submit" name="tijiao" value="提交按钮"></td>
+            </tr>
+            <tr>
+                <td>重置</td>
+                <td><input type="reset" name="cz" value="重置按钮"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<script>
+    // 事件类型:
+    /*
+    //鼠标事件
+    //单击事件click
+    var dj = document.getElementById('dj');
+    function changeBg1(){
+        dj.style.backgroundColor = 'green'
+    }
+    dj.addEventListener('click',changeBg1,false);
+
+    //双击事件dblclick
+    var sj = document.getElementById('sj');
+    function changeBg2(){
+        sj.style.backgroundColor = 'green'
+    }
+    sj.addEventListener('dblclick',changeBg2,true);
+
+    //mousemove鼠标移动
+    var area = document.getElementById('area');
+
+    function change() {
+        console.log('##########')
+    }
+    area.addEventListener('mousemove',change,false);
+    //shu鼠标进入
+    function changeBg3(){
+        area.style.backgroundColor = 'pink';
+    }
+    area.addEventListener('mouseenter',changeBg3,false);
+    //鼠标移出
+    function changeBg4(){
+        area.style.backgroundColor = '#2aabd2';
+    }
+    area.addEventListener('mouseout',changeBg4,false);
+
+    //mouseover鼠标经过,好像和inner没啥不一样的呢....?
+    var over = document.getElementById('over');
+    function over_() {
+        console.log('-+mouseover-+')
+    }
+    over.addEventListener('mouseover',over_,false);
+
+    //鼠标离开mouseleave
+    function leave() {
+        console.log('leaved,leaved,leaved,leaved')
+    }
+    over.addEventListener('mouseleave',leave,false);
+
+    //leave 类似 out; over类似enter; 冒泡的时候应该用leave/over.
+    //无论鼠标离开被选元素还是任何子元素out都触发,但是leave只有离开被选
+    //元素时才会触发
+
+    //鼠标按下抬起
+    var press = document.getElementById('press');
+    function pressDown() {
+        press.style.backgroundColor = 'green';
+    }
+    function pressUp(){
+        press.style.backgroundColor = 'grey';
+    }
+    press.addEventListener('mousedown',pressDown,false);
+    press.addEventListener('mouseup',pressUp,false);
+    */
+
+    /*
+    //键盘事件
+    //按下keydown,抬起keyup,所有按键都响应
+    var qm = document.getElementById('qm');
+    //事件函数
+    function key_down() {
+        qm.style.backgroundColor = 'red';
+        qm.style.color = 'white';
+    }
+    function key_up() {
+        qm.style.backgroundColor = 'white';
+        qm.style.color = 'black';
+    }
+    qm.addEventListener('keydown',key_down,false);
+    qm.addEventListener('keyup',key_up,false);
+
+    // keypress键盘释放事件, 对shift,control等功能按键不响应,只对字母数字空格等有反应
+    var key = document.getElementById('key');
+    //事件函数
+    function key_press() {
+        key.style.borderWidth = '5px';
+    }
+    key.addEventListener('keypress',key_press,false);
+    // function key_release() {
+    //     key.style.borderWidth = '5px';
+    // }
+    // key.addEventListener('keyrelease',key_release,false);
+     */
+
+    /*
+    //页面事件
+    //onunload  页面退出完毕事件 仅winXP IE6可用, 那TMD就是没用呗
+    window.onunload = function () {
+        //信息提示
+        alert('没了,都没了')
+    };
+
+    //onbeforeunload 页面即将退出  只有IE支持 傻逼草!
+    window.onbeforeunload=function () {
+        return '滚犊子吧';
+    };
+
+    //onload
+    // window.onload=function () {
+    //     alert('我要加载了哦')
+    // };
+
+    //oncopy; oncut
+    var qm = document.getElementById('qm');
+    //事件函数
+    function showText() {
+        console.log('你在进行复制操作');
+    }
+    qm.addEventListener('copy',showText,false);
+
+    function showText2() {
+        console.log('你在进行剪切操作');
+    }
+    qm.addEventListener('cut',showText2,false);
+
+    // 页面大小调整
+    window.onresize=function () {
+        console.log('大小调整')
+    };
+
+    //页面滚动onscroll
+    window.onscroll=function () {
+        console.log('滚滚滚滚滚!!!')
+    };
+
+    //onselect
+    var inp = document.getElementsByName('usr')[0];
+    //事件函数
+    function select() {
+        alert('禁止复制')
+    }
+    inp.addEventListener('select',select,false);
+
+    //onselectstart 开始要选中的时候就触发
+    var div = document.getElementsByTagName('div')[0];
+    //事件函数
+    function select_start() {
+        alert('不如让复制水特么知道呢??????');
+    }
+    div.addEventListener('selectstart',select_start,false);
+
+    //为文档对象添加进制选中操作
+    //不好使的做法:DOM2
+    function select_doc(){
+        return false
+    }
+    document.addEventListener('selectstart',select_doc.false);
+    // 好使的做法:DOM0
+    document.onselectstart=function () {
+        return false;//这次就复制不了咯
+    };*/
+
+    /*
+    //表单事件
+    //focus获取焦点事件
+    var usrname = document.getElementsByName('usrname')[0];
+    function focus(){
+        console.log('用户名获取焦点focus');
+    }
+    usrname.addEventListener('focus',focus,false);
+
+    //blur失去焦点事件
+    function focus2(){
+        console.log('用户名失去焦点blur');
+    }
+    usrname.addEventListener('blur',focus2,false);
+
+    //onchange单选框
+    var bgcolor = document.getElementsByName('bgcolor')[0];
+    function ch_bg(){
+        var table = document.getElementsByTagName('table')[0];
+        if (bgcolor.value==='red'){
+            table.style.backgroundColor='red';
+        }else if(bgcolor.value==='purple'){
+            table.style.backgroundColor='purple';
+        }else if(bgcolor.value==='blue'){
+            table.style.backgroundColor='blue';
+        }else{
+            r = Math.floor(Math.random()*256);
+            g = Math.floor(Math.random()*256);
+            b = Math.floor(Math.random()*256);
+            table.style.backgroundColor= 'rgb(' + r + ',' +g+ ',' + b + ')';
+        }
+    }
+
+    bgcolor.addEventListener('change',ch_bg,false);
+
+
+    //onsubmit
+    //获取form
+    var form = document.getElementById('form1');
+    // function check() {
+    //     console.log('asdfjkhga lskj');
+    //     return false;
+    // }
+    // form.addEventListener('submit',check,false);
+    form.onsubmit=function () {
+        //验证表单
+        if(usrname.value !== ''){
+            return true
+        }else{
+            alert('没填完');
+            return false
+        }
+    };
+
+    //onreset重置
+    form.onreset=function () {
+        var result = window.confirm('Are you sure you wanna clear the form?');
+        return result
+    };
+    */
+
+
+
+
+
+
+</script>

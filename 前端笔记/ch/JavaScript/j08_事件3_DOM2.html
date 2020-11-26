@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM2</title>
+    <style>
+        #yuebing{
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="yuebing">月并还是无人的好吃</div>
+</body>
+</html>
+
+<script>
+
+    //获取元素
+    var yuebing = document.getElementById('yuebing');
+
+    //事件函数
+    function show(){
+        alert(yuebing.innerHTML);
+    }
+
+    //IE浏览器(仅仅支持冒泡流)
+    //事件添加
+    // yuebing.attachEvent('onclick',show);//只有IE7以下浏览器能识别这个函数
+    //
+    // //事件删除
+    // yuebing.detachEvent('onclick',show);//只有IE7以下浏览器能识别这个函数
+
+
+    //非IE浏览器
+    //事件添加
+    yuebing.addEventListener('click',show,true);//true则为捕获阶段,false冒泡阶段
+
+    //事件删除
+    setTimeout(function () {
+        yuebing.removeEventListener('click',show,true);
+    }, 3000);
+
+
+</script>

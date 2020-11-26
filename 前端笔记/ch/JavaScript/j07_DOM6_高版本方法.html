@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新版方法</title>
+    <style>
+        .red{
+            width: 300px;
+            height: 100px;
+            background: red;
+            margin-top: 10px;
+        }
+        .orange{
+            width: 300px;
+            height: 100px;
+            background: orange;
+            margin-top: 10px;
+        }
+        .yellow{
+            width: 300px;
+            height: 100px;
+            background: yellow;
+            margin-top: 10px;
+        }
+        .green{
+            width: 300px;
+            height: 100px;
+            background: green;
+            margin-top: 10px;
+        }
+        .cyan{
+            width: 300px;
+            height: 100px;
+            background: cyan;
+            margin-top: 10px;
+        }
+        .blue{
+            width: 300px;
+            height: 100px;
+            background: blue;
+            margin-top: 10px;
+        }
+        #purple{
+            width: 300px;
+            height: 100px;
+            background: purple;
+            margin-top: 10px;
+        }
+        div{
+            width: 800px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="guess">
+        <!--这是一个注释-->
+        <span>一个小猪</span>
+        <span>走进机器</span>
+        <span>变成一个鸭子</span>
+        <span>打一个物品</span>
+        <span>:变压器</span>
+    </div>
+    <ul>
+        <li class="abc xyz" id="cf">意义意义意义</li>
+        <li>俄文日而而</li>
+        <li class="abc efg">三三三三三三</li>
+        <li id="4">嘶嘶嘶嘶嘶</li>
+
+    </ul>
+    <hr class="abc"/>
+
+    <div class="red"></div>
+    <div class="orange"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <div class="cyan"></div>
+    <div class="blue"></div>
+    <div id="purple"></div>
+
+
+</body>
+</html>
+<script>
+
+    //innerHTML 获取或者设置一个元素节点/标签的内容
+    //可以获取标签中的所有内容,哪怕是注释, 变成字符串.
+    var guess = document.getElementById('guess');
+    console.log(guess.innerHTML);
+
+    //设置, 可以直接解析出内容中的html代码
+    // guess.innerHTML = '门前大桥下,<hr/>路过一群鸭';
+
+    //innerText 获取或者设置一个元素节点/标签的内容, 取出标签, 保留文本
+    var guess2 = document.getElementById('guess');
+    console.log(guess2.innerText);//<span神马的都没有了>
+
+    //设置, 无法直接解析出内容中的html代码
+    // guess2.innerText ='门前大桥下,<hr/>路过一群鸭'
+
+    //outerHTML  获取或者设置一个元素节点/标签的内容 , 包含其自身div
+    var res = guess.outerHTML;
+    console.log(res);
+
+    // 设置 设置后会使用新的内容覆盖原有元素节点,<div>就不见了.
+    // guess.outerHTML = '门前大桥下,<hr/>路过一群鸭'
+
+    //outerText : 获取行为和innerText一致, 设置行为参考outerHTML
+
+    //获取ul节点
+    var uls = document.getElementsByTagName('ul');
+    console.log(uls);
+    var ul = uls[0];
+    console.log(ul.childNodes.length);
+    console.log(ul.childElementCount);
+
+    //ul的第一个first/最后一个last元素子节点
+    console.log(ul.firstElementChild);
+
+    //children, 获取[元素]子节点
+    console.log(ul.children);
+
+    //[元素]兄弟节点next|previous
+    var l4 = document.getElementById('4');
+    var bro = l4.previousElementSibling;
+    console.log(bro);
+
+    //获取父节点
+    console.log(bro.parentNode);
+    console.log(bro.parentElement);
+    console.log('-------------------------------------------------------------------+++----');
+    //localName, 获取标签的小写名称
+
+
+    //classList, 获取一个元素节点的多个class值
+    var hr = document.getElementsByTagName('hr')[0];
+    console.log(hr);
+
+    //获取hr的class属性的值, classList只能获取class值,结国是class数据对象
+    console.log(hr.getAttribute('class'));
+    console.log(hr.classList);
+    console.log(hr.classList.value);
+
+    //获取id为cf的元素节点
+    var cf = document.getElementById('cf');
+    //获取其class数据对象
+    var cl = cf.classList;
+    console.log(cl);
+    console.log(cl.value);
+
+    console.log('-------------------------------------------------------------------+++----');
+    //querySelector()通过CSS选择器进行元素节点获取
+    //获取!!第一个!!符合CSS选择器的节点
+    var green = document.querySelector('.green');//class选择器
+    console.log(green);
+    green.innerHTML = '绿色的帽子';
+
+
+    var purple = document.querySelector('#purple');//id选择器
+    console.log(purple);
+
+    var span = document.querySelector('div span');//html选择器
+    console.log(span);
+
+    var divs = document.querySelectorAll('div');//html选择器
+    console.log(divs);
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

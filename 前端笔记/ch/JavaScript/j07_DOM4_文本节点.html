@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>textNode</title>
+</head>
+<body>
+    <div id="fuck">今天是个,好日子阿</div>
+</body>
+</html>
+
+
+<script>
+    //textNode文本节点
+
+    //length获取文本节点中文本的长度
+    var div = document.body.firstElementChild;
+    console.log(div);
+    var txt = div.firstChild;
+    console.log(txt, txt.nodeType);
+    console.log(txt.length);
+
+    //data,获取字符串格式
+    console.log(txt.data);
+    console.log(div.childNodes);
+
+    //方法
+    // //splitText() 拆分
+    // txt.splitText(4);// --> [0-3, 4-n]
+    // console.log(div.childNodes);//是div的子节点,不是txt的,傻逼!
+    // //splitText()
+    // div.insertBefore(document.createElement('hr'),div.lastChild);
+
+
+    /*脱裤子放屁区间
+    //appendData('sth.') 尾部插入
+    txt.appendData(',哎呀我草?');
+
+    //insertData(index, 'sth.')
+    txt.insertData(4,'hahahahahaha');
+    console.log(txt.data);
+
+    //replaceData() 替换文本节点中的内容
+    txt.replaceData(2,3,'三个字');
+
+    //deleteData()
+    txt.deleteData(2,3);//上面的三个字就被删除了
+
+    //substringData()
+    var res = txt.substringData(12,3);
+    console.log(res);
+     */
+
+
+    //修改文字内容:
+    div.innerHTML = '妈的这就能改,费那事干啥';
+
+
+
+
+
+
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素节点和属性节点</title>
+</head>
+<body id="shenzi" bgcolor="#8fbc8f" title="没啥卵用" style="border: 1px solid black;">
+    <div>元素节点操作</div>
+    <div id="mydiv" style="width: 300px; height: 300px; background: #2e6da4">属性节点操作</div>
+
+</body>
+</html>
+
+<script>
+    //元素节点
+    var shenzi = document.getElementById('shenzi');
+    console.log(shenzi);
+    //元素节点属性   attributes获取元素节点的属性节点合集
+    console.log(shenzi.attributes);
+
+    //获取当前元素节点名称
+    console.log(shenzi.tagName);
+
+    //getAttribute() 获取指定属性节点的值
+    console.log(shenzi.getAttribute('title'));
+
+    // 修改/添加属性
+    shenzi.setAttribute('bgcolor', 'yellow');
+    shenzi.setAttribute('class', '这是class值哦');
+
+    //removeAttribute()
+    // shenzi.removeAttribute('id')
+
+    //HTML元素节点(特性)
+    /*
+    1.HTML标签属性会变成JS对象成员属性
+    2.class属性名会变为className属性
+    3.style获取的是所有可能存在的style内容
+    4.在style属性对象访问指定的CSS样式,带有-的样式名要用小驼峰获取, 例如: border-width --> borderWidth
+     */
+    var body = document.getElementById('shenzi');
+    console.log(body.title, body.bgColor, body.id);
+    console.log(body.className, body.style);//style获取的是所有可能存在的style内容
+    body.style.borderWidth = '10px';
+
+
+    //属性节点(依附于元素节点)
+    var mydiv = document.getElementById('mydiv');
+    //设置和获取属性节点 getNamedItem()
+    mydiv.setAttribute('title','div的title');
+    console.log(mydiv.attributes.getNamedItem('title'));
+
+    //新增空属性节点
+    var size = document.createAttribute('size');
+    console.log(size);
+    size.nodeValue = '18cm';
+    console.log(size);
+    console.log('-----------------------------------------------------------------------');
+    console.log(mydiv);
+    mydiv.attributes.setNamedItem(size);
+    console.log(mydiv);
+    console.log(mydiv.id, mydiv.title, size); //好奇怪size为啥是undefined...吗的第二天就不是了,玩我??
+    // console.log(mydiv.id, mydiv.title, mydiv.attributes.getNamedItem('size')); //必须这样才能得到,唔...
+    console.log('-----------------------------------------------------------------------');
+
+    //移除属性节点
+    // mydiv.attributes.removeNameItem('name');
+
+</script>

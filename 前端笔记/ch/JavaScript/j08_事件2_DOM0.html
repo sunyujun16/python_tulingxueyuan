@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM0</title>
+    <style>
+        div{
+            height: 200px;
+            background-color: green;
+        }
+        #girl{
+            height: 200px;
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="girl" onclick="showTxt(this)">我喜欢萝莉</div>
+    <div id="bitch">我喜欢美女</div>
+</body>
+</html>
+
+<script>
+    /*
+    DOM0 兼容性强,但效率低
+     */
+    //事件添加方式二
+    //在标签的事件函数中使用this,表示将当前标签/元素本身当作实参传入事件函数
+    function showTxt(element) {
+        console.log(element.innerHTML);
+    }
+
+    //取消DOM0的事件
+    // setTimeout(function () {
+    //     var girl = document.getElementById('girl');
+    //     girl.onclick = null;
+    // }, 3000);
+
+
+    //事件添加方式2 --> 获取元素节点,添加属性
+    var bitch = document.getElementById('bitch');
+    // var oncl = document.createAttribute('onclick');
+    // oncl.nodeValue = "showTxt(this)";
+    // bitch.attributes.setNamedItem(oncl);
+    // 上面三行麻烦了,下面更快捷
+    bitch.onclick = function () {
+        console.log(this.innerHTML);
+    };
+    //或者:
+    // bitch['onclick'] = function () {
+    //     console.log(this.innerHTML);
+    // };
+
+
+</script>

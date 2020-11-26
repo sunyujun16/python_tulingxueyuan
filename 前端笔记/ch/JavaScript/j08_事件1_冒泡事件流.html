@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡事件流</title>
+    <style>
+        div{
+            padding: 40px;
+            border: 2px solid black;
+        }
+        #red{
+            margin-top: 300px;
+            background-color: red;
+        }
+        #orange{
+            background-color: orange;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color: green;
+        }
+        #cyan{
+            background-color: cyan;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #purple{
+            background-color: purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="red" onclick="show(this)">
+        <div id="orange" onclick="show(this)">
+            <div id="yellow" onclick="show(this)">
+              <div id="green" onclick="show(this)">
+                  <div id="cyan" onclick="show(this)">
+                      <div id="blue" onclick="show(this)">
+                          <div id="purple" onclick="show(this)"></div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    /*
+    网景浏览器: 捕获事件流
+    ie浏览器: 冒泡事件流
+     */
+    //在标签的事件函数中使用this,表示将当前标签/元素本身当作实参传入事件函数
+    function show(element) {
+        //使用事件对象阻止冒泡
+        window.event.cancelBubble = true;
+        console.log(element.id);
+    }
+
+</script>

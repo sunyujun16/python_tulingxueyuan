@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+        div{
+            padding: 50px;
+        }
+        #red{
+            background: #2e6da4;
+        }
+        #txt{
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <form>
+        <textarea id="txt"></textarea>
+
+
+    </form>
+</body>
+</html>
+
+<script>
+    //事件对象的获取
+    var red = document.getElementById('red');
+    function look(){
+        console.log(window.event);
+    }
+    red.addEventListener('click',look,false);
+
+
+    //键盘事件对象
+    var txt = document.getElementById('txt');
+
+    txt.onkeyup=function () {
+        console.log(window.event);
+    };
+
+
+</script>

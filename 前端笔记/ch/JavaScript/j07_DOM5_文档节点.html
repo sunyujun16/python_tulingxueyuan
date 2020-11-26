@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档节点</title>
+</head>
+<body>
+    <div>nothing</div>
+    <ul>
+        <li name="abc">银烛秋光冷画屏</li>
+        <li name="xyz">轻罗小扇扑流萤</li>
+        <li id="night">天阶夜色凉如水</li>
+        <li name="abc">坐看牵牛织女星</li>
+    </ul>
+    <input value="流水不腐户数不住">
+    <hr/>
+    <button onclick="newDoc()">建立文档流</button>
+</body>
+</html>
+
+<script>
+
+    //文档节点, 页面中的老大
+
+    //属性
+    //body节点
+    console.log(document.body, document.body.nodeName);
+
+    //title标签
+    console.log(document.title);  // --> 获得字符串,可以直接赋值
+
+    //cookie 获取服务器存储在浏览器的部分信息 cookie都是明文记录
+    console.log(document.cookie);
+
+    /*
+    what is cookies?
+     */
+
+    //domain
+    console.log(document.domain);
+
+    //URL获取当前文档的完整地址信息
+    console.log(document.URL);
+
+    //lastModified获取最后一次修改时间
+    console.log(document.lastModified);
+
+    //documentElement 表示当前页面的HTML节点
+    console.log(document.documentElement);
+
+    //doctype 获取文档声明节点
+    console.log(document.doctype);
+    console.log('-----------------------------------------------------------------------');
+
+
+    /*方法
+        节点获取类
+        文档流操作类
+        节点创建类
+        新版方法
+     */
+
+    //节点获取类
+    var l1 = document.getElementById('night');
+    console.log(l1);
+
+    var ln = document.getElementsByName('abc');//表单常用
+    console.log(ln);
+    console.log(ln[0].firstChild);
+
+    var tag = document.getElementsByTagName('li');//获取所有同名标签,不常用,找img方便
+    console.log(tag);
+
+    //文档流操作类
+    // open打开新的文档流
+    document.open();//相当于在内存中准备做一个新的页面
+
+    //向打开的文档中写入内容, 现在没生效
+    document.write('风声雨声读书声,声声入耳');
+
+    function newDoc() {
+        document.open();
+        document.write('家事国事天下事,事事关心');//这里生效
+        //close 关闭文档流
+        document.close();
+    }
+
+    //这种文档流操作很少用,除非以下情况
+    document.writeln('1风声雨声读书声,声声入耳');//相当于自动加\n
+    document.writeln('2风声雨声读书声,声声入耳');
+    document.writeln('3风声雨声读书声,声声入耳');
+
+
+    //节点创建方法
+    //JS修改DOM的大流程: 创建节点在内存 --> 添加节点到document
+    //createElement; createAttribute; create
+    var ol = document.createElement('ol');//内存中出现ol标签
+    var li1 = document.createElement('li');
+    //创建文本节点
+    var txt1 = document.createTextNode('序号1');
+    li1.appendChild(txt1);
+    // li1.nodeValue = '序号1';
+    //创建属性节点createAttribute()
+    var id = document.createAttribute('id');
+    id.nodeValue = '元素节点的nodeValue是null,记住了!!!';
+    li1.attributes.setNamedItem(id);//中间的attributes总是忘掉!!!!!!!!!!!!
+    ol.appendChild(li1);
+    var li2 = document.createElement('li');
+    var txt2 = document.createTextNode('序号2');
+    li2.appendChild(txt2);
+    // li2.nodeValue = '序号2';
+    ol.appendChild(li2);
+    document.body.appendChild(ol);
+    console.log(document.body.lastElementChild);
+    console.log(li1.attributes); //--> null
+
+
+
+
+
+
+
+
+
+
+
+</script>

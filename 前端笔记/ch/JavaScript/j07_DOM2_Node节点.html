@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node节点</title>
+</head>
+<body>
+    <button onclick="addHr()">添加节点</button>
+    <button onclick="addBefore()">插入节点before</button>
+    <button onclick="rep()">替换首个元素节点</button>
+    <button onclick="del()">删除最后一个结点</button>
+    <button onclick="clone()">复制调皮</button>
+    <div id="byy">
+        <span id="nanren">男人和女人是不平等的</span>
+        <span>男人说小妹妹你真可爱</span>
+        <span id="biantai">变态</span>
+        <span>女人说小弟弟你真可爱</span>
+        <span id="tp">调皮</span>
+        <span>哦啊哈哈哈</span>
+        <span><br/>的的的哈哈哈</span>
+    </div>
+
+</body>
+</html>
+<script>
+    //Node节点对象的基本方法
+    /*
+    appendChild()   插入到最后
+    insertBefore()  插入到谁之前
+    replaceChild()  替换子节点
+    removeChild()   移除子节点
+    cloneNode()
+     */
+
+    //appendChild
+    function addHr() {
+
+        var byy = document.getElementById('byy');
+        console.log(byy);
+        //创建一个元素节点, hr, 创建之后存在与内存当中
+        var hr = document.createElement('hr');
+        console.log(hr);
+
+        byy.appendChild(hr);
+    }
+
+    //insertBefore()
+    function addBefore() {
+        var byy = document.getElementById('byy');
+        //生成input节点
+        var in_put = document.createElement('input');
+
+        //插入操作
+        byy.insertBefore(in_put, document.getElementById('biantai'));
+    }
+
+    //replaceChild()
+    function rep() {
+        //找到爹
+        var byy = document.getElementById('byy');
+        // 先生成新节点
+        var btn = document.createElement('button');
+        // 获取要替换的节点
+        var s1 = byy.childNodes[1];
+
+        byy.replaceChild(btn, s1);
+
+    }
+
+    //removeChild()
+    function del() {
+        //找到爹
+        var byy = document.getElementById('byy');
+        byy.removeChild(byy.lastElementChild)
+    }
+
+    //cloneNode(), 一般不使用带id的节点, 否则id会重复, js对id有唯一性要求
+    function clone() {
+        var tp = document.getElementById('tp');
+        // 当前节点复制
+        var new_tp = tp.cloneNode(true);  //加true则涵盖子节点,包括文本节点等一切节点
+        // console.log(new_tp);
+        // 添加到父节点中
+        var byy = document.getElementById('byy');
+        byy.appendChild(new_tp);
+    }
+
+    //JS中任意一个ID名称都会在浏览器解析页面时变成一个同名的变量.
+
+
+</script>
