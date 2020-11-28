@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax基本流程</title>
+</head>
+<body>
+    <textarea>我思故我在 </textarea>
+    <hr/>
+    <button name="ajbtn">按钮触发Ajax</button>
+</body>
+</html>
+<script>
+    // Ajax: A JavaScript a XML
+    //页面不刷新更新数据
+
+    /*ajax工作原理
+        同步请求机制
+        异步请求机制
+     */
+
+    //xhr对象 XMLHttpRequest对象原型
+    console.log(XMLHttpRequest);
+    console.log(XMLHttpRequest.prototype);
+
+    //实例化一个xhr对象
+    // var xhr = new XMLHttpRequest();
+    // console.log(xhr);
+
+    //一个简单的ajax流程
+    //获取按钮
+    var ajbtn = document.getElementsByName('ajbtn')[0];
+    console.log(ajbtn);
+
+    //事件函数
+    function func_aj(){
+        //1.建立xhr对象
+        xhr = new XMLHttpRequest();
+        //2.打开一个链接
+        xhr.open('post','./j09_b.php');
+        //2.1设置post专用头信息
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        //3.发送数据
+        xhr.send('age=26&gender=male&hobby=liuyihan');//默认异步
+        //4.检测发送是否成功,检测响应是否成功
+        xhr.onreadystatechange=function () {
+            //检测发送
+            if(xhr.readyState === 4){
+                //检测响应
+                if(xhr.status === 200){
+                    //使用响应数据
+                    console.log(xhr.responseText);
+                }
+            }
+        };
+    }
+
+    //绑定事件
+    ajbtn.addEventListener('click',func_aj,false);
+
+
+</script>

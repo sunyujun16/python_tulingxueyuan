@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-CSS</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #box{
+            border: 1px solid crimson;
+        }
+        #out{
+            position: relative;
+            width: 300px;
+            height: 500px;
+            background: pink;
+            border: 1px solid darkgreen;
+            overflow: auto;
+        }
+        #in{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 200px;
+            left: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="css">两只老虎两只老虎谈恋爱谈恋爱,两只都是公的,真变态,真变态</div>
+    <hr/>
+    <div id="css2">两只老虎两只老虎谈恋爱谈恋爱,两只都是公的,真变态,真变态</div>
+    <hr/>
+    <div id="box"></div>
+
+    <div id="out">
+        <img src="a.jpg">
+        <div id="in"></div>
+    </div>
+
+</body>
+</html>
+<script>
+    //css()单个css属性设定
+    $('#css').css('background','grey');
+
+    //css()多个css属性设定
+    $('#css2').css({'background':'green','height':'100px'});
+
+    //width();height();
+    $('#box').width(500).height(500);
+
+    //获取操作
+    var wth = $('#box').width();//数值
+    console.log(wth);
+    var bord = $('#box').css('border');//字符串
+    console.log(bord);
+
+    //innerHeight()包括补白和本身,不包括边框.用法同上.
+    //outerWidth()包括补白和边框.
+
+
+    //position();获取定位位置.只能获取不能设置
+    var pos = $('#in').position();
+    console.log(pos);
+
+    //offset();获取相对与html的位置
+    var pos2 = $('#in').offset();
+    console.log(pos2);
+
+    //scroll();
+    //获取
+    $('#out').scroll(function () {
+        var arr = [];
+        var t = $('#out').scrollTop();
+        // console.log(t);
+        arr[arr.length] = String(t);
+
+        var l = $('#out').scrollLeft();
+        // console.log(l);
+        arr[arr.length] = String(l);
+
+        // console.log(arr);
+
+    //设置,锁定滚动条位置
+    $('#out').scrollLeft(500);
+    $('#out').scrollTop(100);
+
+
+    });
+
+
+</script>

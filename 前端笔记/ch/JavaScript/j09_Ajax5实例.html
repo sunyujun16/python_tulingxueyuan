@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例:检测用户名是否存在</title>
+    <script src="j09_Ajax3工具.js"></script>
+</head>
+<body>
+    <form action="j09_register.php" method="post">
+        <table>
+            <tr>
+                <td>用户名:</td>
+                <td><input type="text" name="usrname" value=""></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input type="password" name="pwd" value=""></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
+
+<script>
+    var usr = document.getElementsByName('usrname')[0];
+    function check_exist(){
+        var name = usr.value;
+        //与服务器通讯,检测是否存在
+        ajax().get('./j09_register.php?username='+name,alert);
+
+    }
+    usr.addEventListener('blur',check_exist,false);
+
+
+    var pwd = document.getElementsByName('pwd')[0];
+    // pwd.addEventListener('blur',check_exist,false);
+
+</script>

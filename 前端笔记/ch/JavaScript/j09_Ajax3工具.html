@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax工具</title>
+    <script src="j09_Ajax3工具.js"></script>
+</head>
+<body>
+    <button id="btn">检测工具</button>
+</body>
+</html>
+
+<script>
+    btn.onclick=function () {
+        //使用ajax请求服务器数据
+        ajax().get('./j09_b.php?age=26',console.log);
+        ajax().post('./j09_b.php','age=26',console.log);
+
+    }
+
+
+</script>

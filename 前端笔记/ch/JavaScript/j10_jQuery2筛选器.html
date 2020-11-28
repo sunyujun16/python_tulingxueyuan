@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筛选器</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        td{padding: 10px;}
+        #ads{
+            position: absolute;
+            width: 200px;
+            height: 500px;
+            background: pink;
+            right: 50px;
+            top: 1000px;
+        }
+        #gb{
+            position: absolute;
+            bottom: 0px;
+            left: 30px;
+            width: 100px;
+            background: #00ff00;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sound">
+        <p>啷啷啷</p>
+        <div id="1">
+            <div id="1_1">1.1</div>
+            <div id="1_2">1.2</div>
+        </div>
+        <div>叮叮叮</div>
+    </div>
+    <hr/>
+    <table>
+        <tr>
+            <td>孙宇军</td>
+            <td>男</td>
+            <td>26</td>
+            <td>15.6cm</td>
+
+        </tr>
+        <tr>
+            <td>刘奕含</td>
+            <td>女</td>
+            <td>26</td>
+            <td>32A</td>
+        </tr>
+        <tr>
+            <td>孟凡琳</td>
+            <td>女</td>
+            <td>25</td>
+            <td>30A</td>
+        </tr>
+        <tr>
+            <td>孙宇军</td>
+            <td>男</td>
+            <td>26</td>
+            <td>15.6cm</td>
+
+        </tr>
+        <tr>
+            <td>刘奕含</td>
+            <td>女</td>
+            <td>26</td>
+            <td>32A</td>
+        </tr>
+        <tr>
+            <td>孟凡琳</td>
+            <td>女</td>
+            <td>25</td>
+            <td>30A</td>
+        </tr>
+    </table>
+    <hr/>
+    <ol>
+        <li>1111</li>
+        <li>22<b>2</b>2</li>
+        <li>33<span>3</span>3</li>
+        <li id="4" class="orange">4444</li>
+        <li class="red">5555</li>
+        <li class="cyan">6666</li>
+        <li>7<b>7</b>77</li>
+    </ol>
+    <hr/>
+    <ul id="children">
+        <li>清明时节雨纷纷</li>
+        <li>路上行人欲断魂</li>
+        <li>借问酒家何处有</li>
+        <li>牧童遥指杏花村</li>
+    </ul>
+    <hr/>
+    <p>
+        <span>哈哈哈</span>
+        <b>玩游戏</b>
+        <i>打飞机</i>
+        <b>玩游戏</b>
+        <i>打飞机</i>
+        <b>玩游戏</b>
+        <i>打飞机</i>
+    </p>
+    <hr/>
+    <div id="rainbow">
+        <div id="red">red</div>
+        <div id="orange">orange</div>
+        <div id="yellow">yellow</div>
+        <div id="green">green</div>
+        <div id="cyan">cyan</div>
+        <div id="blue">blue</div>
+        <div id="purple">purple</div>
+    </div>
+
+    <div id="ads">
+        <img src="a.jpg" width="220" height="400"/>
+        <div id="gb">关掉,一定要关掉</div>
+    </div>
+</body>
+</html>
+<script>
+    /*基本筛选器
+    $(function () {
+        //first,last
+        $('div:first').css('color','cyan');//同样地,last
+
+        //not
+        $('div:not(.big,#d4)').css('border','1px dotted blue');
+
+        //odd,even,奇数偶数
+        $('div:odd').css('margin-left','200px');
+
+        //eq,gt,lt-->equal, greater than, less than.
+        $('div:gt(3)').css('border','10px dotted orange');
+
+        //header,标题
+        $(':header').css('border','1px solid red');
+
+        //focus
+        setTimeout(function () {
+           $('form>input:focus').css('background-color','cyan');
+        },4000);
+
+        //target
+        $('div:target').css('background','red');
+
+    });
+
+    $(function () {
+        //使用两次选择器,jquery在页面中进行了两次定位
+        // $('tr').css('background','blue');
+        // $('tr:first').css('color','white');
+     */
+
+    /*筛选--过滤
+
+    // first;last
+    $('tr').css('background','red').first().css('color','white');
+
+    //eq(i),下标从0开始,可以为负数,和nth-child;以及nth-of-type等不一样.
+    //为ol中li添加边框,同时设置第四个li为红色
+    $('ol li').css('border','1px solid gray').eq(3).css('color','red');
+
+    //hasClass,检测指定元素是否有指定的class属性,返回布尔值
+    console.log($('li:eq(4)').hasClass('red'));
+
+    //filter;筛选与指定表达式匹配的元素
+    $('li').filter('.red').css('background','red');
+    //filter回调函数
+    $('li').filter(function (index,node) {
+        //判断每个元素是否有class
+        if($(node).hasClass('red')){
+            $(node).css('font-size','24px');
+        }
+    });//$(node)可以转换为jquery对象,从而使用jquery方法.
+
+    //is()
+    var res = $('li:eq(3)').css('border','4px double pink').is('#4');
+    console.log(res);// --> true
+
+    //map()遍历+操作
+    var colors = ['red','orange','yellow','green','cyan','blue','purple'];
+    var index = 0;
+    $('li').map(function () {
+        //为每个元素设置不同的颜色背景.
+        $(this).css('background',colors[index]);
+        index ++
+    });
+
+    //has('x'):筛选有儿子x的
+    $('li').has('b').css('padding-left','100px');
+
+    //not():除了
+    $('li').not('.red').css('color','white');
+
+    //slice():切片.
+    $('li').slice(2,6).css({'font-style':'italic',width:'500px'});
+
+     */
+
+    /*筛选--串联
+
+    //add:添加
+    //为class为red的添加背景,顺带把class-cyan的一起设置字体大小
+    $('.red').css('background','pink').add('.cyan').css('font-size','30px');
+
+    //addBack():老版本的addSelf(); --> 带上自己.
+    $('.orange').css('color','red').nextAll().css('background','green')
+        .addBack().css('color','blue');
+
+    //end()返回最近的一个破坏性操作之前,可以理解为:结束当前的选择,从而返回上一步.
+    $('li').css('border','1px solid black').eq(3)//7个li
+        .css('background','yellow')//1个li,这就是破坏性操作
+        .end().css('margin','10px');//返回选择破坏性操作上一次的对象
+
+    //contents()查找匹配元素内部所有的子节点(包括文本节点).如果元素是一个iframe则查找文档内容.
+    //选中所有子节点,类似DOM里面的childNodes.
+    console.log($('.sound').contents()); */
+
+    /*筛选--查找*/
+    //children()获取子元素节点集合,不包括空行等文本节点
+    $('#children').css('border','1px solid black')
+        .children().css('border','1px dotted green');
+
+    //closest():从自己开始向上级匹配最近的元素
+    $('#1_1').css('color','orange').closest('div:not(#1_1)').css('border','1px dashed cyan');
+
+    //find():向内部搜索所有与指定表达式匹配的元素
+    $('p').css('border','1px solid black').find('b').css('color','blue');
+
+    //prev();选中同级之前元素
+    //prevAll();选中同级之前所有元素
+    //preUntil();选中同级之前元素,到谁为止,不包含这个谁.
+    $('#green').css('border','2px solid black')
+        .prev().css('background','yellow');
+
+    //next()
+    //nextAll()
+    //nextUntil()
+    $('#green').css('border','2px solid black')
+        .next().css('background','cyan');
+
+    //parent();爹
+    //parents();爹,爷...祖宗,body,html
+    //parentsUntil();顾名思义,注意不包括终止元素本身.
+    $('#green').css('border','2px solid black')
+        .parent().css('border','2px solid pink');
+
+    //sibling()
+    $('#green').siblings().css('font-size','30px');
+
+    //offsetParent()
+    $('#gb').offsetParent().css('border','2px solid red');
+
+
+</script>

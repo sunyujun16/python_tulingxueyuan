@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax-json</title>
+    <script src="j09_Ajax3工具.js"></script>
+</head>
+<body>
+    <button id="btn">获取数据转换为json对象</button>
+</body>
+</html>
+<script>
+    //定义要传入的函数
+    function myobj(data){
+        console.log(data,typeof data);//得到字符串格式
+        //转换格式(json字符串转换为对象)(万能)
+        var info = eval("("+data+")");
+        console.log(info,typeof info);
+
+        //转换格式(json字符串转换为对象)
+        var info2 = JSON.parse(data);//json格式书写必须属性和值都带双引号
+        console.log(info2);
+    }
+
+    btn.onclick=function () {
+        //使用ajax请求数据
+        ajax().get('./j09_b2.php',myobj);
+    };
+
+
+</script>

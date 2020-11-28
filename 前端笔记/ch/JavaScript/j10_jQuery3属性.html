@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-属性</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #one{
+            height: 300px; width: 500px;
+            border: 1px solid crimson;
+            /*background: darkred*/
+        }
+        .bg{
+            background: green;
+        }
+        .big{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="one" >鼠标经过变</div>
+    <hr/>
+    <input type="text" name="usrname" value="" nidaye="你大爷"/>
+    <hr/>
+    <a href="http://www.baidu.com">百度</a>
+    <hr/>
+    <input id="1" type="radio" name="gender1" value="0" checked/>男
+    <input id="2" type="radio" name="gender2" value="1" checked/>女<br/>
+</body>
+</html>
+<script>
+    /*attr系列(可以操作自定义的属性) a标签 --> age,sex,...
+    //获取input标签的name值
+    var nm = $('input').attr('name');
+    console.log(nm);
+
+    //添加
+    $('input').attr('wife','liuyihan');
+
+    //移除
+    $('input').removeAttr('nidaye');
+    $('#1').removeAttr('checked');//移除成功
+    $('#2').removeProp('checked');//无法移除
+
+    var $input = $('input');
+    $input.prop('luggageCode',1234);//仍然失败
+    */
+
+    /*prop系列(标签固有属性) a标签--> href,target,name
+
+    //prop设置或者获取属性的值
+    // var nm = $('input').prop('name');
+    // console.log(nm);
+    //
+    // //添加
+    // $('input').prop('type','password');//修改成功
+    // $('input').prop('wife','liuyihan');//添加失败,只能操作固有属性
+    // $('a').prop('target','_blank');//yes
+    //
+    // $('input').removeProp('value');//删除失败
+    // // $('input').removeProp('wife');
+    // $('a').removeProp('target');//失败
+
+     */
+
+    /*CSS类*/
+
+    //添加鼠标经过事件,修改class值
+    // $('#one').mouseover(function () {
+    //     $('#one').attr('class','bg');
+    // });
+
+    //更简单的方式,注意这个是:添加class值
+    $('#one').mouseover(function () {
+        $('#one').addClass('big');
+        $('#one').addClass('bg');
+    });
+
+
+
+
+
+
+</script>

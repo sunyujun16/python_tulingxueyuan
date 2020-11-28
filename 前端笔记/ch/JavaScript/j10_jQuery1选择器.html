@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">月落乌啼霜满天</div>
+    <div class="abc">江枫渔火对愁眠</div>
+    <div name="tt" class="big">姑苏城外寒山寺</div>
+    <div id="d4">夜半钟声到客船</div>
+    <div name="ss">张继</div>
+    <div id="d6">属性选择器哦哦阿啊哈哈哈</div>
+    <ul>
+        <li>序号1</li>
+        <li>序号2阿</li>
+        <li>那个序号3来</li>
+        <li>啊哈序号4</li>
+    </ul>
+    <hr/>
+    <ol>
+        <li>序号1</li>
+        <li id="shuang">序号2阿</li>
+        <li>那个序号3来</li>
+        <li>啊哈序号4</li>
+    </ol>
+    <hr/>
+    <h1>标题1哈哈哈</h1>
+    <h2>标题2哈哈哈</h2>
+    <h3>标题3哈哈哈</h3>
+    <hr/>
+    <form action="http://www.baidu.com" name="jquery练习" method="get" enctype="multipart/form-data">
+        <input type="text" name="wtf1" value=" "><br/>
+        <input type="text" name="wtf2" value=""><br/>
+        <input type="text" name="wtf3" value=""><br/>
+        <hr/>
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" name="usr" value=""></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" name="pwd" value=""></td>
+            </tr>
+            <tr>
+                <td>文件</td>
+                <td><input type="file" name="file" value=""></td>
+            </tr>
+            <tr>
+                <td>单选性别</td>
+                <td>
+                    <input type="radio" name="gender" value="0" checked>female
+                    <input type="radio" name="gender" value="1">male
+                </td>
+            </tr>
+            <tr>
+                <td>多选爱好</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="0">kiss
+                    <input type="checkbox" name="hobby" value="1">sex
+                    <input type="checkbox" name="hobby" value="2">suck
+                    <input type="checkbox" name="hobby" value="3">lick
+                </td>
+            </tr>
+            <tr>
+                <td>提交</td>
+                <td><input type="submit" name="submit" value="提交"></td>
+            </tr>
+            <tr>
+                <td>重置</td>
+                <td><input type="reset" name="rs" value="重塑"></td>
+            </tr>
+            <tr>
+                <td>按钮</td>
+                <td><button>普通按钮</button></td>
+            </tr>
+            <tr>
+                <td>下拉选择</td>
+                <td>
+                    <select name="city" multiple>
+                        <option>北京</option>
+                        <option>东京</option>
+                        <option selected>南京</option>
+                        <option selected>西安</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </form>//...............
+    <hr/>
+    <div class="hidden">1234567</div>
+    <div id="parent">
+        <p>啥玩应</p>
+        <div>123</div>
+        <p>456</p>
+        <div>789</div>
+        <div>abc</div>
+        <p>def</p>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // console.log($);
+
+    //早期版本,任意位置
+    // $(function(){
+    //    //此处书写jquery代码
+    //    $('body').css('background','red');
+    // });
+
+    //新版本,元素的后面生效,习惯放在最后
+    // $('body').css('background','yellow');
+
+    /*
+    $(function () {
+        //元素选择器-为div元素添加边框
+        $('div').css('border','1px solid red').css('margin','10px')
+            .css('width','500px');
+        //id选择器
+        $('#d4').css('color','green');
+
+        //类选择器
+        $('.big').css('font-size','25px');
+
+        //组合选择器
+        $('.big,#d4').css('font-style','italic');
+
+        //通用选择器
+        $('*').css('font-weight','bold');
+
+        //所有jquery选中的内容,禁止使用JS原生操作,必须使用jquery方法...废话
+
+    });
+
+    //层级选择器
+    $(function () {
+        //关系选择器
+        // $('ul li').css('border','1px solid green').css('margin','5px');
+
+        //父子选择器,只能是一层
+        $('ul>li').css('border','1px solid green').css('margin','5px');
+
+        //兄弟选择器,下一个li,位置和类型均精确匹配
+        $('#shuang+li').css('color','darkblue');
+
+        //相邻选择器,向下选择所有同级别li
+        $('#shuang~li').css('font-size','30px');
+    });
+
+
+    $(function () {
+        //内容选择器先中文字包含火
+        $('div:contains("火")').css('font-size','40px');
+        //:empty选中空元素,里面有空格都不行
+        //:has('#xxx')选取子元素中有括号内特征的元素
+        //:parent选取已为人父母的元素(非空元素)
+        $('div:hidden').html('abcdefg');//html修改元素内容
+    });
+
+    //属性选择器
+    $(function () {
+        $('div[id]').css('background','blue');//有id的变蓝
+        $('div[id=d6]').css('background','green');//指定id值的变绿
+        $('div[id!=d6]').css('color','yellow');//除指定id值的所有div字变黄
+
+        $('div[class^=a]').css('padding-top','30px');
+        //^=a:以a开头的class; $=a:以a结尾; *=a:包含a;
+
+        //多属性选择器$('div[][][]')...
+    });
+
+    //表单选择器
+    $(function () {
+        //:type值
+        $('input:text').css('background','gray');
+        $('input:password').css('background','pink');
+        $('input:radio').css({width:'20px',height:'20px'});
+        $('input:checkbox').css({width:'20px',height:'20px'});
+        $('input:submit').css('color','red');
+        $(':button').css('color','blue');
+
+        //属性
+        $('input:checked').css({width:'50px',height:'50px'});
+        $('option:selected').css('background','gray');
+        // $('input:enabled').css({width:'50px',height:'50px'});//可见input
+        // $('input:disabled').css({width:'50px',height:'50px'});//不可见...
+    });
+     */
+
+    //子元素选择器
+    $(function () {
+        //first-child选取各层级内的同名大哥(各辈分的老大中,有相同标签的被选取).
+        //理解 --> 标签s:first-child --> 找到所有作为first-child存在的标签s.
+        $('p:first-child').css('border','1px solid blue');
+        //last-child略
+        $('p:nth-child(3)').css('border','1px solid blue');//参数意思:第几个
+        $('p:nth-last-child(3)').css('border','1px solid blue');//参数意思:倒数第几个
+        //only-child,选择作为独生子女存在的标签
+
+        //first-of-type选中父元素中指定类型的第一个子元素,理解:在同类型中排行老大即可,不一定是所有类型的老大
+        $('div:first-of-type').css({'margin-left':'200px',border:'3px solid green',width:'300px'});
+        //last-of-type; nth-of-type; nth-last-of-type; 道理同上
+        //only-of-type;同类型的独苗
+    })
+
+
+
+</script>
