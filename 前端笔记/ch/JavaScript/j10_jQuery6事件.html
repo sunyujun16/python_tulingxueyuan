@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-事件</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" >爷们儿</div>
+    <hr/>
+    <input type="text" name="usr" value=""/>
+
+</body>
+</html>
+<script>
+    /*入口
+    //直接获取元素属性
+    console.log($("input").attr('name'));//写head标签里无效,因为顺序载入
+
+    //简化入口[页面加载完成后运行]
+    $(function () {
+
+    });
+
+    //完整入口[页面加载完成后运行]
+    $(document).ready(function(){
+
+    });*/
+
+    //on()添加指定事件对应addEventListener; off()
+    //
+    $("#box").on('mouseover',function () {
+        $(this).css('background','green');
+    });
+
+
+
+
+
+
+
+
+
+</script>

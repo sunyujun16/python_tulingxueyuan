@@ -21,12 +21,16 @@
 <body>
     <div id="one" >鼠标经过变</div>
     <hr/>
-    <input type="text" name="usrname" value="" nidaye="你大爷"/>
+    <input type="text" name="usrname" value="今生为你偷" nidaye="你大爷"/>
     <hr/>
     <a href="http://www.baidu.com">百度</a>
     <hr/>
     <input id="1" type="radio" name="gender1" value="0" checked/>男
     <input id="2" type="radio" name="gender2" value="1" checked/>女<br/>
+    <div id="lose" >if you <b>lose</b> yourself</div>
+    <div id="lusi" >如果你<b>撸死</b>你自己</div>
+    <hr/>
+
 </body>
 </html>
 <script>
@@ -64,7 +68,7 @@
 
      */
 
-    /*CSS类*/
+    /*属性-CSS类
 
     //添加鼠标经过事件,修改class值
     // $('#one').mouseover(function () {
@@ -72,14 +76,43 @@
     // });
 
     //更简单的方式,注意这个是:添加class值
+    // $('#one').mouseover(function () {
+    //     $('#one').addClass('big');
+    //     $('#one').addClass('bg');
+    // });
+    // $('#one').mouseout(function () {
+    //     $('#one').removeClass('big');
+    //     $('#one').removeClass('bg');
+    // });
+
+    //最简单的方式:
+    //toggleClass 切换class值;如果没有则添加,有则删除,源码内部进行判断
     $('#one').mouseover(function () {
-        $('#one').addClass('big');
-        $('#one').addClass('bg');
+        $('#one').toggleClass('big');
+        $('#one').toggleClass('bg');
     });
+    $('#one').mouseout(function () {
+        $('#one').toggleClass('big');
+        $('#one').toggleClass('bg');
+    });*/
+
+    /*属性-HTML/文本/值类*/
+    //html() 相当于innerHTML
+    var ht = $('#lose').html();
+    console.log(ht);//b标签被识别到
+    //设置
+    $('#lose').html('no lose in <i>sep</i>');
 
 
+    // text() 相当于innerText
+    var txt = $('#lusi').text();
+    console.log(txt);//仅识别文本部分,无标签
+    //设置
+    $('#lusi').text('<i>九月</i>不撸');
 
-
-
+    //value() 相当于表单元素的value值
+    var val = $('input').val();
+    console.log(val);
+    $('input').val('偷你卫生巾');
 
 </script>

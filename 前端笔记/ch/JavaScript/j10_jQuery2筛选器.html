@@ -130,8 +130,8 @@
         //odd,even,奇数偶数
         $('div:odd').css('margin-left','200px');
 
-        //eq,gt,lt-->equal, greater than, less than.
-        $('div:gt(3)').css('border','10px dotted orange');
+        //eq(0),gt,lt-->equal, greater than, less than.
+        $('div:gt(3)').css('border','10px dotted orange');//不包含参数下标,且不受嵌套关系限制.
 
         //header,标题
         $(':header').css('border','1px solid red');
@@ -246,7 +246,7 @@
     $('#green').css('border','2px solid black')
         .parent().css('border','2px solid pink');
 
-    //sibling()
+    //siblings()
     $('#green').siblings().css('font-size','30px');
 
     //offsetParent()

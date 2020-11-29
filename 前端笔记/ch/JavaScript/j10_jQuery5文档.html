@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-文档</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #box{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        #box2{
+            width: 600px;
+            height: 100px;
+            border: 1px solid blue;
+            clear: both;
+        }
+        .small{
+            width: 48px;
+            height: 48px;
+            border: 1px solid green;
+            float: left;
+        }
+        .chg{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="family" ><b>媳妇</b><i>爷们儿</i></div>
+    <hr/>
+    <button>append</button><br/>
+    <button>appendTo</button><br/>
+    <button>prepend</button><br/>
+    <button>prependTo</button><br/>
+    <button>insertBefore</button><br/>
+    <button>insertAfter</button><br/>
+    <button>Before</button><br/>
+    <button>After</button><br/>
+    <hr/>
+    <div id="box" >
+    </div>
+    <hr/>
+    <div id="box2" >
+    </div>
+    <hr/>
+    <button id="btn1">wrap</button>
+    <button id="btn2">unwrap</button>
+    <button id="btn3">wrapAll</button>
+    <button id="btn4">wrapInner</button>
+    <button id="btn5">replaceWith</button>
+    <button id="btn6">replaceAll</button>
+    <button id="btn7">empty</button>
+    <button id="btn8">remove</button>
+    <button id="btn9">detach</button>
+    <button id="btn10">clone</button>
+    <span>老坛酸菜!</span>
+    <span>螺丝粉!</span>
+    <hr/>
+    <div id="box3">红烧牛肉面!</div>
+    <div id="box4">红烧牛肉面!</div>
+    <hr/>
+    <b id="b1">替换前</b>
+    <hr/>
+    <div id="empty">
+        <span>清明时节雨纷纷</span>
+        <span id="xr">路上行人欲断魂</span>
+        <span>借问酒家何处有</span>
+        <span id="mt">牧童遥指杏花村</span>
+    </div>
+    <hr/>
+    <div class="chg">阿斯顿法斯蒂芬葫芦瓦</div>
+</body>
+</html>
+<script>
+
+    /*文档-内外部插入
+    //append() 在所有指定标签的最后添加内容,支持HTML格式
+    // $('#family').append('<u>第三者</u>');
+
+    //appendTo() 主宾顺序颠倒,将指定内容添加到指定标签
+    // $('<i>第四者</i>').appendTo('#family');
+
+    //prepend() prependTo()最前添加,道理同append()
+
+    var num = 0;
+
+    $('button:first').click(function () {
+        $('#box').append('<div class="small">'+num+'</div>');
+        num++
+    });
+    $('button:eq(1)').click(function () {
+        $('<div class="small">'+num+'</div>').appendTo('#box');
+        num++
+    });
+    $('button:eq(2)').click(function () {
+        $('#box').prepend('<div class="small">'+num+'</div>');
+        num++
+    });
+    $('button:eq(3)').click(function () {
+        $('<div class="small">'+num+'</div>').prependTo('#box');
+        num++
+    });
+    //insertBefore()会移动原有元素到新位置
+    $('button:eq(4)').click(function () {
+        $('.small').insertBefore('#box2');
+        num++
+    });
+    $('button:eq(5)').click(function () {
+        $('.small').insertAfter('#box2');
+        num++
+    });
+
+    //after() before() 在每一个匹配的元素前后添加, 相当于append和prepend的外部形式
+    $('button:eq(6)').click(function () {
+        $('#box2').before('<div class="small">'+num+'</div>');
+        num++
+    });
+    $('button:eq(7)').click(function () {
+        $('#box2').after('<div class="small">'+num+'</div>');
+        num++
+    });*/
+
+    /*文档-包裹
+    //wrap()
+    $('span').wrap('<b></b>');
+    $('span').wrap('<div/>');
+    //事件函数
+    $('#btn1').click(function () {
+        $('span').wrap('<div/>');
+    });
+    //解套
+    $('#btn2').click(function () {
+        $('span').unwrap();//解除选定元素类的外层第一层标签
+    });
+
+    //wrapAll()
+    $('#btn3').click(function () {
+        $('span').wrapAll('<p/>');//把同类span集中打包到首个span处,外层用<p>包裹
+    });
+    //wrapInner()
+    $('#btn4').click(function () {
+        $('#box3,#box4').wrapInner('<b/>');//在选中元素的内层嵌套标签,并包裹原来的内容
+    });*/
+
+    /*文档-替换
+    //replaceWith()
+    $('#btn5').click(function () {
+        $('#b1').replaceWith('<p>替换后</p>');//使用参数内容完整替换
+    });
+    //只替换标签,先html()获取内容,再在参数里添加
+
+    //replaceAll, replaceWith()的主宾反向操作*/
+
+    /*文档-复制|删除*/
+    //empty()
+    $('#btn7').click(function () {
+        $('#empty').empty();//清空选中元素的所有内容,不移除标签本身
+    });
+
+    //remove();移除匹配元素
+    $('#btn8').click(function () {
+        $('#empty>#xr').remove();//清空选中元素的指定标签本身及其内容
+    });
+
+    //detach()从DOM中删除所有匹配的元素。这个方法不会把匹配的元素从jQuery对象中删除，因而可以在将来再使用这些
+    // 匹配的元素。但与remove不同的是,除了这个元素本身得以保留之外，其他的比如绑定的事件，附加的数据等都会被移除。
+    $('#btn9').click(function () {
+        $('#empty>#mt').detach();//
+    });
+
+    //clone(); 复制元素,对应DOM的cloneNode()
+    $('.chg').click(function () {
+        $('.chg').css('background','red');
+    });
+
+    $('#btn10').click(function () {
+        var div = $('.chg').clone(true,false);//第一个参数表示事件处理函数是否复制 ,第二个参数表示事件和所有子元素的数据是否复制,这里无效
+        $('body').append(div);
+    });
+
+
+
+
+</script>
