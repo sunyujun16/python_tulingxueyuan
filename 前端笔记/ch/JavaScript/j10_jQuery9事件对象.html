@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-事件对象</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #img{
+            width: 400px;
+            /*height: 800px;*/
+            border: 1px solid crimson;
+            overflow: auto;
+        }
+        #ball{
+            width: 100px;
+            height: 100px;
+            border: 1px solid crimson;
+            overflow: auto;
+            /*position: relative;*/
+            /*left: 100px;*/
+            /*top: 50px;*/
+            background: #2aabd2;
+        }
+    </style>
+</head>
+<body>
+    <div id="img">
+        <img src="./dream.jpg" alt="美女" title="女神" width="400"/>
+    </div>
+    <hr/>
+    <button>event</button>
+    <div id="ball"></div>
+</body>
+</html>
+<script>
+    $("button:eq(0)").click(function (eve) {
+        console.log(eve);//获取事件,具体细节参数看手册
+        $("#ball").css('background','green');
+    });
+
+</script>

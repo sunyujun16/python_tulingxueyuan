@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-动画</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #img{
+            width: 400px;
+            /*height: 800px;*/
+            border: 1px solid crimson;
+            overflow: auto;
+        }
+        #ball{
+            width: 100px;
+            height: 100px;
+            border: 1px solid crimson;
+            overflow: auto;
+            position: relative;
+            left: 100px;
+            top: 50px;
+            background: #2aabd2;
+        }
+    </style>
+</head>
+<body>
+    <button>hide</button>
+    <button>show</button>
+    <button>toggle</button>
+    <button>slideDown</button>
+    <button>slideUp</button>
+    <button>slideToggle</button>
+    <button>fadeIn</button>
+    <button>fadeOut</button>
+    <button>fadeTo</button>
+    <button>fadeBack_mine</button>
+    <button>fadeToggle</button>
+    <hr/>
+    <div id="img">
+        <img src="./dream.jpg" alt="美女" title="女神" width="400"/>
+    </div>
+    <hr/>
+    <button>animate1</button>
+    <button>animate2</button>
+    <button>stop</button>
+    <button>finish</button>
+    <div id="ball">
+
+    </div>
+</body>
+</html>
+<script>
+    /*隐藏
+    $('button:eq(0)').click(function () {
+        $('#img').hide(1000);
+    });//隐藏本身加内容
+    $('button:eq(1)').click(function () {
+        $('#img').show(1000);
+    });//显示本身加内容
+
+    //toggle()
+    $('button:eq(2)').click(function () {
+        $('img').toggle(1000);
+    });//切换隐藏显示标签内容,但不影响标签本身*/
+
+    /*
+    //slideDown
+    $('button:eq(3)').click(function () {
+        $('img').slideDown(1000);
+    });
+    //slideUp()
+    $('button:contains(slideUp)').click(function () {
+        $('img').slideUp(1000);
+    });
+    //slideToggle()
+    $('button:contains(Toggle)').click(function () {
+        $('img').slideToggle(1000);
+    });*/
+
+    /*淡入淡出
+    //fadeIn()淡入fadeOut()淡出
+    $('button:eq(6)').click(function () {
+        $('img').fadeIn(1000);
+    });
+    $('button:eq(7)').click(function () {
+        $('img').fadeOut(1000);
+    });
+    $('button:eq(8)').click(function () {
+        $('img').fadeTo(1000,0.3);
+    });
+    $('button:eq(9)').click(function () {
+        $('img').fadeTo(1000,1);
+    });
+    $('button:eq(10)').click(function () {
+        $('img').fadeToggle(1000);
+    });*/
+
+    /*自定义动画*/
+    //animate()自定义动画
+    $('button:eq(11)').click(function () {
+        $('#ball').animate({
+            "width":300,
+            "left":200,
+            "background":'green',//背景颜色不可变,其他可变
+            "border-radius":100
+        },1000,function () {//嵌套fn参数,继续添加function,在上步动画完成后继续执行
+            $(this).animate({
+                "width":100,
+                "left":100,
+                "border-radius":100
+            },1000)//function可以继续添加
+        });
+    }
+    );
+    //另一种写法,不嵌套fn参数
+    $('button:eq(12)').click(function () {
+        $('#ball').animate({
+            "width":200,
+            "top":100,
+            "border-radius":100
+        },1000)
+            //添加延时效果
+            .delay(2000)
+            .animate({
+                "width":100,
+                "top":100,
+                "border-radius":100
+            });
+    });
+
+    //stop()
+    $('button:eq(13)').click(function () {
+        //匹配正在动画的元素
+        $("#ball:animated").stop();//暂停动画//再点击原动画按钮继续执行
+    });
+
+    //finish(); 直接瞬间完成动画
+    $('button:eq(14)').click(function () {
+        //匹配正在动画的元素
+        $("#ball:animated").finish();//暂停动画//再点击原动画按钮继续执行
+    });
+
+    //全局动画设置
+    jQuery.fx.off=true;//取消所有动画的中间执行过程效果,直接一步到胃
+
+
+
+
+</script>

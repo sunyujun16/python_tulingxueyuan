@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-Ajax</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #text{
+            width: 600px;
+            height: 300px;
+            border: 1px solid crimson;
+        }
+    </style>
+</head>
+<body>
+    <button id="b1">ajax</button>
+    <button id="b2">get</button>
+    <button id="b3">post</button>
+    <button id="b4">getJSON</button>
+    <button id="b5">getScript</button>
+    <button id="b6">load</button>
+    <button id="b7">load</button>
+    <button id="b8">load</button>
+    <hr/>
+    <div id="text"></div>
+
+</body>
+</html>
+<script>
+    $(function () {
+        /*ajax,通用功能
+        $('#b1').click(function () {
+            //ajax请求数据
+            $.ajax({
+                type:'GET',//ajax操作方式,GET; POST
+                data:'name=sunyujun&age=26',//发送给服务器的数据
+                url:'j09_register.php',//给服务器那个文件
+                dataType:'html',//设置服务器返回数据的格式(默认text),json...
+                success:function (data) {//获取数据之后的操作
+                    alert(data);
+                },
+                error:function () {
+                    alert('啊欧')
+                }
+            });
+        });*/
+
+        //get
+        // $('#b2').click(function () {
+        //     //ajax的get请求
+        //     $.get('./j09_register.php','name=liuyihan&age=26',function (data) {
+        //         //返回数据的操作
+        //         $('#text').html(data);
+        //     });//其他参数见jquery手册
+        // });
+
+        //load(); 加载其他文件的内容
+        $('#b6').click(function () {
+            //简单写法
+            $('#text').load('./j10_jQuery7_page.html');
+
+            //
+            $.load('./j10_jQuery7_page.html',function (data) {
+                $('#')
+            })
+        });
+
+        //将一个表单的所有name和value格式化成指定样式
+        //serialize()把选中内容的键值对做成url格式,方便ajax使用
+        //serializeArray()把选中内容的键值对做成json对象数组格式,方便ajax使用
+
+    })
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-下拉菜单特效</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #nav li{
+            width: 200px;
+            background: #2e6da4;
+            border: 1px solid beige;
+            padding: 2px 10px;
+        }
+        body{
+            color: yellow;
+        }
+        h2{
+            background: #2e6da4;
+            width: 220px;
+            color: orange;
+        }
+        ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <h2>蔬菜</h2>
+        <ul>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+            <li>小丝瓜</li>
+            <li>小香蕉</li>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+        </ul>
+        <h2>蔬菜</h2>
+        <ul>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+            <li>小丝瓜</li>
+            <li>小香蕉</li>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+        </ul>
+        <h2>蔬菜</h2>
+        <ul>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+            <li>小丝瓜</li>
+            <li>小香蕉</li>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+        </ul>
+        <h2>蔬菜</h2>
+        <ul>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+            <li>小丝瓜</li>
+            <li>小香蕉</li>
+            <li>小黄瓜</li>
+            <li>小茄子</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+<script>
+    $('h2').click(function () {
+        $(this).next('ul').toggle(200);//show();slideDown()透明度
+        $(this).siblings().next('ul').hide(200);
+    });
+
+</script>

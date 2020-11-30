@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-工具</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #ball{
+            width: 100px;
+            height: 100px;
+            border: 1px solid crimson;
+            background: #2aabd2;
+        }
+    </style>
+</head>
+<body>
+    <button>length</button>
+    <button>get</button>
+    <div id="ball"></div>
+    <hr/>
+    <ul id="l">
+        <li>小黄瓜</li>
+        <li>小茄子</li>
+        <li>小丝瓜</li>
+        <li>小香蕉</li>
+    </ul>
+
+
+</body>
+</html>
+<script>
+    //数组工具
+    // each()遍历数组;
+    var names = ['刘奕含','孙宇军','王祖贤','万茜','宋轶'];
+    $.each(names,function(i,v){
+        console.log(i,v);
+    });
+
+    //遍历对象
+    var syj = {
+        'height':170,
+        'length':'15.6cm',
+        'gender':'male'
+    };
+    $.each(syj,function(k,v){
+        console.log(k,v);
+    });
+
+    //extend()属性继承
+    var lyh = {
+        'gender':'female',
+        'age':26
+    };
+    var women = {
+        'beautiful':true,
+        'face':true,
+        'feature':'lovely'
+    };
+    $.extend(lyh,women);//合并多个对象,同名属性,后面覆盖前面,返回第一个对象
+    console.log(lyh);
+
+    //另一种:参数多一个,原则不变,第一个参数被操作,后面覆盖前面的.
+
+    //grep()
+    var nums1 = [1,2,3,4,5,6,7,8,9,10];
+    $.grep(nums1,function (data) {
+        if(data%2===0){
+            console.log(data);//过滤,以输出偶数
+        }
+    });
+
+    //$.makeArray() 将类似数组的数据转换为数组
+
+    var lis = document.getElementsByTagName('li');
+    console.log(lis);
+
+    var new_lis = $.makeArray(lis);
+    console.log(new_lis);
+
+    var jli = $('li');
+    console.log(jli);
+
+    var new_li = $.makeArray(jli);
+    console.log(new_li);
+
+    //map(); 遍历并操作数组,组成新数组,
+    var nums = [1,2,3,4,5,6,7,8,9,10];
+    console.log(nums);
+
+    var new_nums = $.map(nums,function (num) {
+        if(num%2!==0){
+            num += 0.5;
+            return num
+        }
+    });
+
+    console.log(new_nums);
+
+    //inArray()敬检测数组中是否有指定数据
+    var Muses = ['刘奕含','孙宇军','王祖贤','万茜','宋轶'];
+
+    var res = $.inArray('刘奕含',Muses);
+    console.log('在吗',res);
+
+    //toArray(); 还原DOM节点
+    var list = document.getElementsByTagName('li');//获取HTMLCollection的li
+    console.log(list);
+
+    var jlist = $(list);//转换为jquery对象
+    console.log(jlist);
+
+    //还原为DOM节点
+    var new_jlist = jlist.toArray();
+    console.log(new_jlist);
+
+
+    //merge(), 合并数组
+    var lovers = ['刘奕含','孙宇军','王祖贤','万茜','宋轶'];
+    var me = ['孙宇军','张国荣'];
+
+    var famlies = $.merge(lovers,me);
+    console.log(famlies);
+
+    //$.trim() 去除字符串两侧的空白字符,就是Python的strip()
+    var str1 = '  sdaf   ';
+    var str2 = $.trim(str1);
+    console.log(str2);
+
+    //param()
+    var syj = {
+        'height':170,
+        'length':'15.6cm',
+        'gender':'male'
+    };
+    //组成URI
+    var url_syj = $.param(syj);
+    console.log(url_syj); //--> height=170&length=15.6cm&gender=male
+
+
+
+</script>

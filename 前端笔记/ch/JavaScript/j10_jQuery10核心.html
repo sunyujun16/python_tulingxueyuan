@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-核心</title>
+    <script src="j10_jQuery-3.5.1.js"></script>
+    <style>
+        #ball{
+            width: 100px;
+            height: 100px;
+            border: 1px solid crimson;
+            overflow: auto;
+            position: relative;
+            /*left: 100px;*/
+            /*top: 50px;*/
+            background: #2aabd2;
+        }
+        .dl{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button>length</button>
+    <button>get</button>
+
+    <div id="ball"></div>
+    <hr/>
+    <button class="dl">队列</button>
+    <button class="dl">清空队列</button>
+    <ul id="l">
+        <li>小黄瓜</li>
+        <li>小茄子</li>
+        <li>小丝瓜</li>
+        <li>小香蕉</li>
+    </ul>
+
+</body>
+</html>
+<script>
+    //length
+    $("button:eq(0)").click(function (eve) {
+        console.log($("#l>li").length);//元素数量
+    });
+
+    //get()
+    $("button:eq(1)").click(function (){
+        var el = $("#l>li").get(3);//获取jquery选中的元素中的第n个元素的节点
+        console.log(el);
+    });
+
+    //$('xxx').index($('#xxx')),判断索引
+
+    /*手动队列
+    //queue()队列:管状特征(先进先出);添加或者查看队列
+    $('button:eq(2)').click(function () {
+        $(document).queue('mylife',function () {
+            console.log('脱裤子');
+        }).queue('mylife',function () {
+            console.log('蹲下');
+        }).queue('mylife',function () {
+            console.log('拉屎');
+        }).queue('mylife',function () {
+            console.log('擦屁股');
+        });
+
+        //chakan队列
+        console.log($(document).queue('mylife'));
+
+        //运行队列(出队)
+        $(document).dequeue('mylife');
+        $(document).dequeue('mylife');
+        $(document).dequeue('mylife');
+        $(document).dequeue('mylife');
+
+    });*/
+
+    /*自动队列
+    $('button:eq(2)').click(function () {
+        $(document).queue('mylife', function (next) {
+            console.log('脱裤子');
+            next()
+            //运行完毕当前后,自动寻找并运行下一个
+        }).queue('mylife', function (next) {
+            console.log('蹲下');
+            next()
+        }).queue('mylife', function (next) {
+            console.log('拉屎');
+            next()
+        }).queue('mylife', function (next) {
+            console.log('擦屁股');
+            next()
+        });
+
+        //查看队列
+        console.log($(document).queue('mylife'));
+
+        //运行队列(出队);zidong
+        $(document).dequeue('mylife');
+
+    });*/
+
+    /*另一种自动队列,和next()没有区别,推荐用next()
+    $('button:eq(2)').click(function () {
+        $(document).queue('mylife', function () {
+            console.log('脱裤子');
+            $(document).dequeue('mylife');
+        }).queue('mylife', function () {
+            console.log('蹲下');
+            $(document).dequeue('mylife');
+        }).queue('mylife', function () {
+            console.log('拉屎');
+            $(document).dequeue('mylife');
+        }).queue('mylife', function () {
+            console.log('擦屁股');
+            $(document).dequeue('mylife');
+        });
+
+        //查看队列
+        console.log($(document).queue('mylife'));
+
+    });*/
+
+
+    $('button:eq(2)').click(function () {
+        $(document).queue('mylife', function () {
+            console.log('脱裤子');
+
+            //运行完毕当前后,自动寻找并运行下一个
+        }).queue('mylife', function () {
+            console.log('蹲下');
+
+        }).queue('mylife', function () {
+            console.log('拉屎');
+
+        }).queue('mylife', function () {
+            console.log('擦屁股');
+
+        });
+
+        //查看队列
+        console.log($(document).queue('mylife'));
+        //运行队列(出队);zidong
+        $(document).dequeue('mylife');
+
+    });
+
+    //清空队列
+    $('button:eq(3)').click(function () {
+        $(document).clearQueue('mylife');
+        console.log($(document).queue('mylife'));
+    });
+
+
+    //动画队列
+    $("#ball").click(function () {
+        $(this).animate({left:300},1000);
+        console.log($(this).queue('fx'));//动画的默认队列名称是fx,系统保留名称
+        $(this).animate({left:600,'border-radius':100},1000);
+    });
+
+
+
+
+    //deQueue();
+
+
+
+    //clearQueue();
+
+
+
+
+
+</script>

@@ -5,17 +5,40 @@
     <title>jquery-事件</title>
     <script src="j10_jQuery-3.5.1.js"></script>
     <style>
-        #box{
+        #box,#box2,#box3{
             width: 300px;
-            height: 300px;
+            height: 100px;
             border: 1px solid red;
         }
     </style>
 </head>
 <body>
     <div id="box" >爷们儿</div>
-    <hr/>
+    <hr/><button id="btn">toggle</button>
+    <div id="box2" >娘们儿</div>
+    <div id="box3" >哥们儿</div>
     <input type="text" name="usr" value=""/>
+    <hr/>
+    <form action="1.php" method="get">
+        <table border="1" width="400">
+            <tr>
+                <td>用户名:</td>
+                <td><input type="text" name="usrnm" value=""/></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input type="password" name="pwd" value=""/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="sub" value="注册"/></td>
+                <td><input type="reset" name="res" value="重置"/></td>
+            </tr>
+        </table>
+    </form>
+    <hr/>
+    <div id="smt" style="width: 300px;height: 100px;border: 1px solid crimson">点我提交啊哈哈哈</div>
+
+
 
 </body>
 </html>
@@ -36,10 +59,64 @@
 
     //on()添加指定事件对应addEventListener; off()
     //
-    $("#box").on('mouseover',function () {
-        $(this).css('background','green');
+    // $("#box").on('mouseover',function () {
+    //     $(this).css('background','green');
+    // });
+    // $("#box").on('mouseout',function () {
+    //     $(this).css('background','yellow');
+    // });
+
+    //缩写之
+    // $("#box").on('mouseover',function () {
+    //     $(this).css('background','green');
+    // }).on('mouseout',function () {
+    //     $(this).css('background','yellow');
+    // });//更进一步缩写见:事件切换-hover()
+
+    //3秒后移除
+    // setTimeout(function () {
+    //     $('#box').off('mouseout');
+    // },3000);
+
+    //one()一次性事件
+    $("#box2").one('click',function () {
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+        $("#box2").css('background','rgb('+r+','+g+','+b+')');
     });
 
+    //trigger(); 触发
+    $("#smt").click(function () {
+        $('form').trigger('reset');//,submit则提交表单
+    });
+
+    /*triggerHandler() 阻止浏览器的默认行为*/
+    $("input[name='res']").click(function () {
+        $(this).triggerHandler('reset');//阻止重置操作,无法阻止,草他妈的
+        $('form').css('backgroundColor','pink');//改为自定义操作
+    });
+
+    /*事件切换*/
+    //hover(fn1,fn2); 两个参数分别为:mouseover,mouseout的函数
+    $("#box").hover(function () {
+        $(this).css('background','green');
+    },function () {
+        $(this).css('background','yellow');
+    });
+
+    //toggle()//切换显示/隐藏元素,页面加载完就触发,btn隐藏,box2变色
+    $("#btn").click(function () {
+        // alert(1111);
+        $("#box2").toggle(1000);
+    });
+
+    /*专用事件操作*/
+    //单击事件
+    $('#box3').click(function () {
+        $("#box3").css('background','blue');
+    });
+    //双击dblclick(),等等等等...
 
 
 
