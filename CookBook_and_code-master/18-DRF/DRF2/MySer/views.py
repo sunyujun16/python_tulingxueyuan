@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.views import APIView
 # Create your views here.
-from MySer.models import *
+from .models import *
 from rest_framework.response import  Response
-from MySer.serializers import *
+from .serializers import *
 
 from rest_framework.generics import GenericAPIView
 from rest_framework.viewsets import ModelViewSet

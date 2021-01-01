@@ -28,7 +28,7 @@
         //Student:  选取所有Studetn的节点，不考虑位置
         School//Age:选取School后代中所有Age节点
         //@Other: 选取Other属性
-        //Age[@Detail]:  选取带有属性Detail的Age元素
+        //Age[@Detail]: 选取带有属性Detail的Age元素
         
 # 谓语-Predicates
 - /School/Student[1]: 选取School下面的第一个Student节点

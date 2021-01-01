@@ -112,7 +112,7 @@
 - 管理程序
     - Euroda使邮件普及 
     - Netscape，outlook，forxmail后来居上
-    - Hotmal使用浏览器发送邮件i
+    - Hotmail使用浏览器发送邮件
 - 参考资料
     - [官网](https://docs.python.org/3/library/email.mime.html)
     

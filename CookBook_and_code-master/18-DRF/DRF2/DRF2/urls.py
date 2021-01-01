@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 # 导入视图
-from MySer import views
+from ..MySer import views
 # 导入drf的路由
 from rest_framework import routers
 

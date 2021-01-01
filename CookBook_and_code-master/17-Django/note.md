@@ -28,11 +28,11 @@
         
 - pycharm 启动
     - 需要配置
-    
+
 # 路由系统-urls
 - 创建app
     - app：负责一个具体业务或者一类具体业务的模块
-    - python manage.py tartapp teacher
+    - python manage.py startapp teacher
     
 - 路由
     - 按照具体的请求url，导入到相应的业务处理模块的一个功能模块
@@ -137,6 +137,8 @@
    - 重定向，服务器端跳转
    - 构造函数的第一个参数用来指定重定向的地址
    - 案例 ShowViews/views.py
+        
+        
         ```python
            # 在 east/urls中添加一下内容
            url(r'^v10_1/', views.v10_1),
@@ -289,7 +291,7 @@
     
 # 8. 基于类的视图
 - 和基于函数的视图的优势和区别:
-    - HTTP方法的methode可以有各自的方法,不需要使用条件分支来解决
+    - HTTP方法的method可以有各自的方法,不需要使用条件分支来解决
     - 可以使用OOP技术(例如Mixin)
 - 概述
     - 核心是允许使用不同的实例方法来相应不同的HTTP请求方法,而避开条件分支实现

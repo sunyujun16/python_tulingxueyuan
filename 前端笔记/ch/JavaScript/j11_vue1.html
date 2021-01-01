@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="vue.js"></script>
+    <style>
+        .box1{
+            height: 100px;
+            border: 1px solid crimson;
+        }
+        .box2{
+            background: #2e6da4;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="app">
+        <p v-html="msg"></p>
+        <p v-text="str"></p>
+        <p>{{obj}}</p>
+        <p>{{arr}}</p>
+        <p>{{1+2}}</p>
+        <p>{{1>0?'yes':'No'}}</p>
+        <hr/>
+        <!--<a href="url">百度</a> 无效-->
+        <a v-bind:href="url">百度1</a>
+        <a :href="url" :title="age">百度2</a><!--简写-->
+        <!--<p>{{var a = 1}}</p> 报错-->
+        <div :class="[item1,item2]"></div>
+        <div :class="{box1:true}"></div>
+        <div v-bind:style="sty"></div>
+        <hr/>
+        <input type="text" name="usrnm" v-model="value">123<br/>
+        <input type="radio" name="gender" value="1" v-model="chosen">男
+        <input type="radio" name="gender" value="0" v-model="chosen">女{{chosen}}
+        <hr/>
+        <ul>
+            <li v-for="v,i in arr">{{v}},{{i}}</li>
+        </ul>
+        <hr/>
+        <ul>
+            <li v-for="v,k in obj">{{v}},{{k}}</li>
+        </ul>
+        <hr/>
+        <input type="text" value="" v-model="a"/>输入数字
+        <b style="font-size: 20px">+1 = {{b}}</b>
+
+    </div><!--挂载点-->
+    <hr/>
+
+</body>
+</html>
+<script>
+    // var vu = new Vue({
+    //     el:'#app',
+    //     data:{
+    //         name:'孙宇军',
+    //         age:26,
+    //     }
+    // });
+    // console.log(vu);
+
+    var vm = new Vue({
+        el:'#app',//挂载元素
+        data:{// 模板
+            msg:'<h1>你好</h1>',
+            str:'<h2>1234</h2>>',
+            obj:{
+                name:'孙宇军',
+                age:26,
+            },
+            arr:['刘奕含','王祖贤','宋轶'],
+            url:'http://www.baidu.com',
+            item1:'box1',
+            item2:'box2',
+            sty:{
+                width:'300px',
+                height:'100px',
+                background:'green',
+            },
+            value:'data设置value',
+            chosen:'',//反向影响数据,受选定标签的value值影响,radio,checked,select,均有效
+            a:1,
+        },
+        methods:{
+            //设置事件函数func:function(eve){...}
+        },
+        filters:{
+            //fn:function(_data){
+            //      var str1 =_data.charAt(0).toUpperCase()   首字母提取并变成大写
+            //      return _data.splice(0,1,str1)   拼接
+            // }
+        },
+        computed:{
+            b:function () {
+                return parseInt(this.a)+1
+            }
+        },
+    });
+
+
+
+    /*MVVM:
+        M:model
+        V:view
+        vm:viewModel
+    实现双向数据绑定:
+        当model中的数据发生变化,视图里面的数据发生变化
+        当视图里面数据变化,model数据随之改变
+    模板语法
+        {{}}数值类型,字符串,对象,数组,运算
+        不能写表达式
+    文本指令:  v-开头,对html元素功能进行扩展
+        v-html
+        v-text
+    属性操作
+        v-bind:属性名=''
+        简写   :属性名=''
+    v-model:一般操作表单,绑定value值和data中的变量,双向绑定.
+    v-for循环
+    v-if 显示和隐藏   v-if='表达式',v-else-if,v-else, 哪个表达式为true 就渲染哪个标签
+    v-show='true or false 控制显示隐藏display属性,
+    v-on:click='func'   简写:   @click='func'
+
+    过滤器:2.0版本取消内置过滤器
+        格式{{'_data_'|过滤器名称}}
+
+    计算属性:
+        computed:{
+            属性:function(){
+                return this.xxx...
+            }
+        }//属性值不可以手动修改,除非设置set函数,set时触发. model中set后的值和页面view仍然双向影响
+
+    侦听属性:
+        var num = 0
+        watch:{
+            属性:function(){
+                num++
+            }
+        }
+    数据交互
+    vue就这么多了
+
+
+    */
+
+
+</script>

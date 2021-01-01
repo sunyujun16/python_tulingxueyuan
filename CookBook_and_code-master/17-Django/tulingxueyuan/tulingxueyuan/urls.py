@@ -1,8 +1,8 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from teacher import views as tv
-from teacher import teacher_url
+from ..teacher import views as tv
+from ..teacher import teacher_url
 
 urlpatterns = [
     # Examples:

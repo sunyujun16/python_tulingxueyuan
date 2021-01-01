@@ -1,5 +1,5 @@
-from  rest_framework import serializers # 序列化器都存放在这里
-from MySer.models import *
+from rest_framework import serializers # 序列化器都存放在这里
+from .models import *
 # 此文件用来存放序列化器
 
 

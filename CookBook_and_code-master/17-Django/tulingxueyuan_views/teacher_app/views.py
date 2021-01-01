@@ -1,8 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.core.urlresolvers import  reverse
+from django.core.urlresolvers import reverse
 # Create your views here.
-
 
 
 def teacher(req):

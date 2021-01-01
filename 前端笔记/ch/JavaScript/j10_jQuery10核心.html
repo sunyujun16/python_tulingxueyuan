@@ -50,7 +50,7 @@
         console.log(el);
     });
 
-    //$('xxx').index($('#xxx')),判断索引
+    //$('xxx').index($('#xxx')),获取特定#索引
 
     /*手动队列
     //queue()队列:管状特征(先进先出);添加或者查看队列
@@ -65,7 +65,7 @@
             console.log('擦屁股');
         });
 
-        //chakan队列
+        //查看队列
         console.log($(document).queue('mylife'));
 
         //运行队列(出队)
@@ -159,17 +159,6 @@
         console.log($(this).queue('fx'));//动画的默认队列名称是fx,系统保留名称
         $(this).animate({left:600,'border-radius':100},1000);
     });
-
-
-
-
-    //deQueue();
-
-
-
-    //clearQueue();
-
-
 
 
 
