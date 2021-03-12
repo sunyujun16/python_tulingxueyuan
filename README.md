@@ -1,3 +1,3 @@
 # learnning_notes
 
-nothing special.
+- Source code and excercises while learning online lesson of Python.
