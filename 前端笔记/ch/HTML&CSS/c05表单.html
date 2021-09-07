@@ -9,7 +9,7 @@
 </head>
 <body>
     <!--设定表单信息和范围-->
-    <!--method:get/post;  get明文传输,受地址栏设定限制;  post密文传输,没有长度限制-->
+    <!--method:get/post; get明文传输,受地址栏设定限制; post密文传输,没有长度限制-->
     <form action="http://www.baidu.com" method="post" enctype="multipart/form-data">
 
 
@@ -24,15 +24,18 @@
         <input type="radio" name="gender" value="female">女
         <input type="radio" name="gender" value="unknown">不知道
 
+        <!-- 多选表单 -->
         <hr/>
-        <input type="checkbox" name="hobby" value="0" checked>篮球
+        <input type="checkbox" name="hobby" value="0" checked>篮球 <!-- checked 表示默认选中-->
         <input type="checkbox" name="hobby" value="1">足球
         <input type="checkbox" name="hobby" value="2" checked>肉球
         <input type="checkbox" name="hobby" value="3">地球
 
+<!--        文件表单-->
         <hr />
         <input type="file" name="fileurl">
 
+<!--        reset按钮-->
         <hr />
         <input type="reset" value="清空重写">
 
@@ -47,6 +50,7 @@
 
         <hr/>
         <!--下拉表单/单选-->
+        <p>请选择他妈的月份</p>
         <select name="yuefen">
             <option value="1">1月</option>
             <option value="2">2月</option>
@@ -66,9 +70,7 @@
 
         <hr/>
         <!--文本域表单-->
-        <textarea name="describe" rows="5" cols="10">
-            此处省略一万字点点滴滴的
-        </textarea>
+        <textarea name="describe" rows="5" cols="100">此处省略一万字点点滴滴的</textarea>
 
         <hr/>
         <!--按钮组件 使用button实现提交-->
