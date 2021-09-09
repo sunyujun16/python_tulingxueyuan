@@ -14,18 +14,21 @@
     console.log(wives);
 
     //创建数组
+    // noinspection all
     var arr = new Array('刘奕含', '王祖贤', '宋轶', 666);
     console.log(arr, typeof arr);
+    // 先执行了后面，乃至最后面的delete代码。导致结果缺失。这里不懂为何如此，好像是tm有病。。。。。。
+    // 并不是先执行，而是控制台的问题。打个断点，结果就不会出错了。应该是网页读取过程和脚本执行不匹配（不是实时的），导致读取到的数据已经被修改。
 
     //创建指定长度100的数组 = new Array(100) --> {empty *100}  --> 值为undefined
 
     //直接创建, 标准方法, 字面量
-    // var arr = [];
+    // arr = [];
 
     //添加元素 arr[arr.length] = x
     //修改元素 略
     //删除
-    delete arr[3]; //位置键仍在
+    delete arr[2]; //位置键仍在
     console.log(arr);
 
     //遍历数组
@@ -95,15 +98,9 @@
 
     //arr.splice(2,0,'sth'...);  (index, del_how_many, elements)
 
-
+    delete arr[3];
 
     //splice
-
-
-    //
-
-
-
 
 </script>
 

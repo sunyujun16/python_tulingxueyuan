@@ -12,12 +12,11 @@
     <div id="savefuck" title="hello" class="red">节日</div>
     <div id="save">会憋坏的</div>
 
-    <ul>
+    <ul id="ul0">
         <li>呃呃呃</li>
         <li id="waibo">取经香甜个</li>
         <li>asdgsdkjl</li>
         <li>阿斯顿广东科龙</li>
-
     </ul>
 </body>
 </html>
@@ -26,7 +25,6 @@
     /*
     DOM Document Object Model
         DOM控制页面(BOM控制窗口)
-
      */
     console.log(window);//BOM
     console.log(window.document);//DOM
@@ -34,11 +32,11 @@
     console.log(Node.prototype);
 
     // 节点Node:
-    // html中, 一切都是节点
+    // html中, 一切都是节点，一切的一切的一切，奥，一切。
     // Node常用属性: 节点名称; 节点类型; 节点值
     // 节点名称 节点对象.nodeName
     // 节点类型 节点对象.nodeType
-    // 节点值   节点对象.noseValue
+    // 节点值   节点对象.nodeValue
 
     //元素节点
     var happy = document.getElementById('happy');//通过id查找一个节点元素
@@ -62,6 +60,17 @@
     console.log(txt.nodeName);// --> #text
     console.log(txt.nodeType);// --> 3
     console.log(txt.nodeValue);//文本节点值 --> 会憋坏的
+
+    // 也就是说，第一步总是获取元素，elm = getElementByXxx 然后 elm.attributes 存储了所有的属性，
+    // 而 elm.childNodes 是其子节点构成的数组。
+
+    var ul0 = document.getElementById('ul0');
+    console.log('获取到的元素：',ul0);
+    var children = ul0.childNodes;
+    for (let i = 0; i < children.length; i++) {
+        console.log(children[i]);
+    }
+    // console.log(children);
 
     /*
                     名称      类型      值

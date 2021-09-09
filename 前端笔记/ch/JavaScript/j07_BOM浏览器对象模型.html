@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>BOM</title>
+    <style>
+        #asdf{
+            font-size: 30px;
+            font-weight: bolder;
+            border: 2px solid crimson;
+        }
+        .haha{
+            margin-top: 20px;
+            background-color: lightskyblue;
+            height: 30px;
+        }
+
+    </style>
 </head>
 <body>
-    <div>
+    <div id="asdf">
         asdf
     </div>
-    <button onclick="stopds()">停下来</button>
+    <button onclick="stopds()" class="haha">停下来</button>
     <button onclick="jg()">警告</button>
     <button onclick="xz()">选择</button>
     <button onclick="sr()">输入</button>
@@ -30,18 +43,18 @@
     // JS   window对象就是语法的Global固有对象
     // 浏览器中window对象就是BOM的替身!
 
-    // console.log(window);
-    // console.log(window.document);
-    // console.log(window.history);
-    // console.log(window.screen);
-    // console.log(window.location);
-    // console.log(window.frames);
-    // console.log(window.navigator);
+    console.log(window);
+    console.log(window.document);
+    console.log(window.history);
+    console.log(window.screen);
+    console.log(window.location);
+    console.log(window.frames);
+    console.log(window.navigator);
 
     //JS语法
-    // var girl = '大波妹';
-    // console.log(girl);
-    // console.log(window.girl);
+    var girl = '大波妹';
+    console.log(girl);
+    console.log(window.girl);
 
 
     //window对象的自带功能,(不在六大对象之内)
@@ -101,16 +114,11 @@
         window.alert('FBI Warning');
     }
     function xz() {
-        window.confirm('你有鸡鸡吗')//有返回值
+        window.confirm('你确定要自宫以进行下一步修炼吗?')//有返回值
     }
     function sr() {
         window.prompt('请输入您的年龄')//有返回值
     }
-
-
-
-
-
 
 </script>
 
