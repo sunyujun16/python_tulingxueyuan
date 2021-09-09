@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>文档节点</title>
 </head>
-<body>
+<body bgcolor="#ffc0cb">
     <div>nothing</div>
     <ul>
         <li name="abc">银烛秋光冷画屏</li>
@@ -12,7 +12,7 @@
         <li id="night">天阶夜色凉如水</li>
         <li name="abc">坐看牵牛织女星</li>
     </ul>
-    <input value="流水不腐户数不住">
+    <input value="流水不腐，户枢不蛀。">
     <hr/>
     <button onclick="newDoc()">建立文档流</button>
 </body>
@@ -25,6 +25,8 @@
     //属性
     //body节点
     console.log(document.body, document.body.nodeName);
+    // document.body.setAttribute('background-color', 'gray');
+    document.body.setAttribute('bgcolor', '#ffc0cb');
 
     //title标签
     console.log(document.title);  // --> 获得字符串,可以直接赋值
@@ -32,12 +34,10 @@
     //cookie 获取服务器存储在浏览器的部分信息 cookie都是明文记录
     console.log(document.cookie);
 
-    /*
-    what is cookies?
-     */
+    /* what is cookies? */
 
     //domain
-    console.log(document.domain);
+    console.log("domain: ",document.domain);
 
     //URL获取当前文档的完整地址信息
     console.log(document.URL);
@@ -113,14 +113,6 @@
     document.body.appendChild(ol);
     console.log(document.body.lastElementChild);
     console.log(li1.attributes); //--> null
-
-
-
-
-
-
-
-
 
 
 

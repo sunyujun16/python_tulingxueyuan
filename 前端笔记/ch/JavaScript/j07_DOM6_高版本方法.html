@@ -93,12 +93,12 @@
 
     //innerText 获取或者设置一个元素节点/标签的内容, 取出标签, 保留文本
     var guess2 = document.getElementById('guess');
-    console.log(guess2.innerText);//<span神马的都没有了>
+    console.log(guess2.innerText);//<span神马的都没有了> 只保留文本
 
     //设置, 无法直接解析出内容中的html代码
     // guess2.innerText ='门前大桥下,<hr/>路过一群鸭'
 
-    //outerHTML  获取或者设置一个元素节点/标签的内容 , 包含其自身div
+    //outerHTML  获取或者设置一个元素节点/标签的内容 , 包含其自身div，即：比inner多了标签。
     var res = guess.outerHTML;
     console.log(res);
 
@@ -109,7 +109,7 @@
 
     //获取ul节点
     var uls = document.getElementsByTagName('ul');
-    console.log(uls);
+    console.log('uls: ',uls);
     var ul = uls[0];
     console.log(ul.childNodes.length);
     console.log(ul.childElementCount);
@@ -137,8 +137,8 @@
     console.log(hr);
 
     //获取hr的class属性的值, classList只能获取class值,结国是class数据对象
-    console.log(hr.getAttribute('class'));
-    console.log(hr.classList);
+    console.log('class: ',hr.getAttribute('class'));
+    console.log('clsList: ',hr.classList);
     console.log(hr.classList.value);
 
     //获取id为cf的元素节点
@@ -162,7 +162,7 @@
     var span = document.querySelector('div span');//html选择器
     console.log(span);
 
-    var divs = document.querySelectorAll('div');//html选择器
+    var divs = document.querySelectorAll('div');//html选择器  注意All的字眼。
     console.log(divs);
 
 
