@@ -74,25 +74,25 @@
      布尔类型:true; false
       */
 
-     /*
-     函数类型: 声明语法--> function
+
+     // 函数类型: 声明语法--> function
 
         function paoniu(){
             console.log('刘奕含是世界上最漂亮的女人')
         }
+        paoniu();
 
-        匿名函数(表达式)
+        // 匿名函数(表达式)
         var john = function(){
             console.log('说得没错')
-        }
-        console.log(typeof john) --> function
-      */
+        };
+        john();
+        console.log(typeof john); // function
 
-     /*
-     对象类型:
 
-      */
-     var obj = new Object(); //创建一个对象
+     //对象类型:
+     var obj = {}; //创建一个对象
+    // var obj = new Object(); //创建一个对象 is also ok.
     //查看数据类型
     console.log(typeof obj);
     console.log(obj)
@@ -107,7 +107,8 @@
     var no1 = 5;
     var no2 ='15';
 
-    var res = no1 + no2; //得到字符串515,隐式数据类型转换, 和python不一杨
+    res = no1 + no2; //得到字符串515, 隐式数据类型转换, 和python不一样
+    console.log(res);
 
     //判断
     if (true){
@@ -146,18 +147,13 @@
     var res = parseInt(var1);
     console.log(res, typeof res);
 
-    var var1 = '250.2cm';
-    var res = parseInt(var1);
+    var1 = '250.2cm';
+    res = parseInt(var1);
     console.log(res, typeof res);
 
-
-
-
-
-
-
-
-
+    var1 = '250.33cm';
+    res = parseFloat(var1);
+    console.log(res);
 
 </script>
 

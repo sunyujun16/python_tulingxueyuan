@@ -5,7 +5,7 @@
     <title>对象原型</title>
     <style>
         div{
-            width: 200px;
+            width: 500px;
             height: 200px;
             background: #985f0d;
             /*overflow: scroll;*/
@@ -14,28 +14,28 @@
 </head>
 <body>
     <div>
-        <img src="../HTML&CSS/b.jpg" alt="美乳" width="200px" title="巨乳">
+        <img src="../HTML&CSS/b.jpg" alt="美乳" width="400px" title="微乳嫣双飞">
     </div>
 </body>
 </html>
 
 <script>
     //对象原型-Object; 万物之始
-    // console.log(Object); // 这样查看的是函数
-    // console.log(Object.prototype);
+    console.log(Object); // 这样查看的是函数
+    console.log(Object.prototype);
 
     //通过对象实例查找构造方法
     var obj1 = Object();
     // console.log(obj1.constructor);
 
     //通过对象实例查找构造方法
-    // var con = obj1.constructor;
-    // console.log(con.prototype);
+    var con = obj1.constructor;
+    console.log(con.prototype);
     // 或者:
-    // var fa = obj1.constructor.prototype;
-    // console.log(fa);
+    var fa = obj1.constructor.prototype;
+    console.log(fa);
     //l浏览器提供的快捷方法访问实例对象的原型
-    // console.log(obj1.__proto__); //仅支持特定浏览器: webkit内核
+    console.log(obj1.__proto__); //仅支持特定浏览器: webkit内核
 
 
     //Object原型的三个方法
@@ -43,14 +43,14 @@
     //toLocaleString()返回对象的本地化字符串格式, 和上面方法绝大多数时候一样
     //valueOf()返回当前对象的原始值
     var obj2 = new Object();
-    // console.log(obj2.toString(), typeof obj2.toString());
-    // console.log(obj2.toLocaleString(), typeof obj2.toLocaleString());
-    // console.log(obj2.valueOf(), typeof obj2.valueOf());
+    console.log(obj2.toString(), typeof obj2.toString());
+    console.log(obj2.toLocaleString(), typeof obj2.toLocaleString());
+    console.log(obj2.valueOf(), typeof obj2.valueOf());
 
     var d = new Date();
-    // console.log(d.toString());//输出世界通用格式字符串
-    // console.log(d.toLocaleString());//输出当前地区的格式字符串
-    // console.log(d.valueOf());//时间戳
+    console.log(d.toString());//输出世界通用格式字符串
+    console.log(d.toLocaleString());//输出当前地区的格式字符串
+    console.log(d.valueOf());//时间戳
 
     //注意ToString()和toLocalStrong()一般不需要主动调用, like python的魔法函数
 
@@ -58,30 +58,30 @@
 
     //Boolean对象原型(构造方法)
     var b = new Boolean();
-    // console.log(b);
-    // console.log(b.__proto__);
+    console.log(b);
+    console.log(b.__proto__);
     //注意: 以上代码纯属脱裤子放屁(显式调用, 傻子才用), var b = true就完了(隐式调用)
 
 
     //Number对像
 
     var num1 = new Number(1);
-    var num1 = Number(true);
+    num1 = Number(true);
     var num = 1;
 
 
     //Function对象原型
     function sum(a, b){
         return a + b;
-    }//声明
+    } //声明
     var sub = function (a,b) {
         return a - b
-    };//匿名
+    }; //匿名
 
     var obj3 = new Function('a', 'b', 'return a + b');//系统隐式调用, 傻子才用too
 
 
-    //Global对象实例!!!!!!!故有对象, 本来就是实例对象,不能new Global
+    //Global对象实例!!!!!!!固有对象, 本来就是实例对象,不能new Global
     //是JS语法中的对象, 不能直接使用, 必须由解释器实现才可以使用
     //在浏览器中Global的最终实现对象为window对象
     //Global 就是全局,相当于皇上,啥都是他的

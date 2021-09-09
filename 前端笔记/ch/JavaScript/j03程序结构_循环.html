@@ -27,7 +27,7 @@
 
     //生成一个10*5的表格
     //输出表格标签
-    document.write('<table border="1" width="500"');
+    document.write('<table border="1" width="500">');
     i = 0;
     while (i<5){
         document.write('<tr>');
@@ -71,14 +71,14 @@
     // document.write(syj);
 
     for (var attr in syj){
-        document.write(attr, ':', syj[attr],'<br/>');
+        document.write(attr, ' : ', syj[attr],'<br/>');
         console.log(attr, syj[attr]);
     }
 
 
     //其他流程控制语句: with; break; continue(数据过滤)
     //with指定对象, 属性不需要加前缀
-    var lyh = new Object();
+    var lyh = {};
     lyh.name = '刘奕含';
     lyh.age = 26;
     lyh.husband = '孙宇军';

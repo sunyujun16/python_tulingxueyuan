@@ -5,9 +5,11 @@
     <title>盒子模型</title>
     <style>
         .one{
-            width: 200px;
+            width: 300px;
             height: 200px;
-            background: cyan;
+            /*background: cyan;*/
+            background-image: url(c12.jpeg);
+            background-repeat: no-repeat;
             border: 1px solid orange;
         }
         .two{
@@ -35,7 +37,7 @@
             width: 200px;
             height: 200px;
             background: red;
-            border: 1px solid red;
+            border: 3px solid green;
             margin: 10px;
             /*overflow: scroll;*/
         }
@@ -46,12 +48,12 @@
             padding: 20px;
         }
         .con:before,.con2:before{
-            content:"😍❤❤❤❤"/*在网页中不支持选中*/
+            content:"😍❤❤❤❤";/*在网页中不支持选中*/
+            background: red;
         }
         .con2:after{
             content:url("c12.jpeg");
         }
-
     </style>
 </head>
 <body>

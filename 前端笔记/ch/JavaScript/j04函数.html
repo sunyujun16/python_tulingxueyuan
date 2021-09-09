@@ -43,7 +43,7 @@
         }
         // dw = document.write;
         document.write('</table>');
-        return('return值这是')
+        return('return值这是');
         }
     a = my_table(3, 5);
     document.write(a);
@@ -55,16 +55,16 @@
     //在此之前,都是'声明函数'
     //表达式函数, 即匿名函数, 这个知识点JS是先驱
     var jia = function (a, b) {
-        return console.log(a + b)
+        console.log(a + b);
     };
     jia(1.5, 2);
     //表达式函数的内部函数特征
-    function outer(){
-        var inner = function(){
-            alert('顶风尿市长');
-        };
-        inner();
-    }
+    // function outer(){
+    //     var inner = function(){
+    //         alert('顶风尿市长');
+    //     };
+    //     inner();
+    // }
     // outer();
 
     //自执行函数(定义时调用) 不用函数名,函数体外部加括号, 直接调用, 内部是独立的命名空间
@@ -83,15 +83,16 @@
         var total = 0;
         for (var num in arguments){
             total += num;
+            console.log(num, typeof num); // num实际上是下标，还是字符串类型，很搞笑就。。。
         }
         console.log('total: ', total)
     }
     sum(1, 2, 3); // --> 0012
 
-     function sum2() {
+    function sum2() {
         var total = 0;
         for (var num=0;num < arguments.length;num++){
-            total += arguments[num];
+            total += arguments[num]; // 需要从参数数组中取出方可。好奇怪的语法。。。
         }
         console.log('total: ', total)
     }
@@ -107,6 +108,7 @@
         var tv = '电视';
         var wm = '洗衣机';
         var fl = '手电筒';
+        tv = '震动棒';
         var father = function () {
         };
         var brother = function () {
@@ -116,7 +118,7 @@
         syj = function () {
             return tv
         };
-    }
+    } // 费半天劲，就TM给syj赋了个值。。。
 
     juhua_home();
     console.log(syj());
@@ -135,7 +137,7 @@
         };
         lyh = function () {
 
-                items = tv + wm + fl;
+                items = tv + wm + fl; // 这步应该是按值捕获了。
                 // for(var num=0;num < arguments.length;num++){
                 // items += arguments[num];
                 // }
@@ -176,7 +178,6 @@
 
     zhangsan();
     lisi();
-
 
 </script>
 
